@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=benutzername\ passwort
+comment0.target=boolean\ anmelden(java.lang.String,\ java.lang.String)
+comment1.params=benutzername\ passwort
+comment1.target=boolean\ registrieren(java.lang.String,\ java.lang.String)
+numComments=2
