@@ -128,9 +128,12 @@ public class Login extends JFrame implements View{
 		return b2;
 	}
 	public String getBenutzername(){
-	   return null;
+	   String bname = tf1.getText();
+	   System.out.println(bname);
+	   return bname;
 	}
 	public String getPasswort(){
+	   System.out.println(tf2.getPassword());
 	   return null;
 	}
 }

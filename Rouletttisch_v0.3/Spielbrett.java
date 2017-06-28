@@ -7,11 +7,12 @@ public class Spielbrett extends JFrame implements View{
 	/**
 	 * The HEIGHT of the JFrame:
 	 */
-	private final int HEIGHT = 640;
+	private final int HEIGHT = 660;
 	
 	//Controller:
 	private Controller controller;
-	
+	private JMenuBar menuBar = new JMenuBar();;
+	private JMenu menu = new JMenu("Menü");
 	public Spielbrett(Controller c){
 		controller = c;
 		setControllerView();
@@ -20,8 +21,13 @@ public class Spielbrett extends JFrame implements View{
 		setSize(WIDTH, HEIGHT);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setLayout(null);
 		
+		
+		
+		//Hintergrundblid setzen
+		setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/roulette.jpg")));
+		menuBar.add(menu);
+		add(menuBar);
 		
 		
 		this.setVisible(true);
