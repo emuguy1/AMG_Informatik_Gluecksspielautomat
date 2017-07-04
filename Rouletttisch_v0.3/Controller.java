@@ -23,7 +23,7 @@ public class Controller implements ActionListener{
             if(model.anmelden(((Login)view).getBenutzername(),((Login)view).getPasswort())){
                 //TODO
                 view.dispose();
-                view = new Spielbrett(this);
+                view = new Spielbrett(/*this*/);
                 model.setView(view);
             }
             else{   
@@ -36,7 +36,7 @@ public class Controller implements ActionListener{
            if(model.registrieren(((Login)view).getBenutzername(),((Login)view).getPasswort())){
                 //TODO
                 view.dispose();
-                view = new Spielbrett(this);
+                view = new Spielbrett(/*this*/);
                 model.setView(view);
             }
             else{   
