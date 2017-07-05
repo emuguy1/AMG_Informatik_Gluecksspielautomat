@@ -40,7 +40,7 @@ public class Spielbrett extends JFrame implements View{
         
         menuBar.add(menu);
         this.setJMenuBar(menuBar);
-        
+        Coinsetzen();
         
         this.setVisible(true);
     }
@@ -60,7 +60,9 @@ public class Spielbrett extends JFrame implements View{
     public void Coinsetzen(){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/3coin.jpg"));
-            this.add(new Bild(image));
+            Graphics.drawImage( image,0,0,null);
+            this.add(new Bild(image),60,60);
+            this.repaint();
         }
         catch(Exception e){
         }

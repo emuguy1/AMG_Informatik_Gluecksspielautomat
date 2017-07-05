@@ -10,7 +10,7 @@ public class Bild
         b1=b;
     }
     public void paintComponent(Graphics g){
-        g.drawImage(b1, 40,40,null);
+        g.drawImage(b1, 0,0,null);
     
     }
 }
