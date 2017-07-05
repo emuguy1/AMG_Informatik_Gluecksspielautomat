@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 public class Bild
- extends JComponent{
+ extends JPanel{
     
     private BufferedImage b1=null;
     
     public Bild(BufferedImage b){
         b1=b;
     }
-    public void paintComponent(Graphics g){
+    protected void paintComponent(Graphics g){
         g.drawImage(b1, 0,0,null);
     
     }

@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.awt.*;
 import javax.imageio.*;
 public class Spielbrett extends JFrame implements View{
     /**
@@ -59,8 +60,8 @@ public class Spielbrett extends JFrame implements View{
     }
     public void Coinsetzen(){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/3coin.jpg"));
-            Graphics.drawImage( image,0,0,null);
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/nice.jpg"));
+            
             this.add(new Bild(image),60,60);
             this.repaint();
         }
