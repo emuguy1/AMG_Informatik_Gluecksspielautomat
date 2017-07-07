@@ -44,7 +44,11 @@ public class Controller implements ActionListener{
                 ((Login)view).registrierungFehlgeschlagen();
             }
         }
-        
-    }
+        //Spielbrettbetrieb
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
+        }
+           }
+   }
 
-}
+
+
