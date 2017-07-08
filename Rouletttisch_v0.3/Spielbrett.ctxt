@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Spielbrett()
+comment1.params=
+comment1.target=void\ setControllerView()
+comment2.params=
+comment2.target=void\ addFieldButtons()
+comment3.params=
+comment3.target=void\ addB4()
+comment4.params=
+comment4.target=void\ Coinsetzen()
+comment5.params=
+comment5.target=void\ addB2()
+comment6.params=
+comment6.target=javax.swing.JButton\ getB4()
+numComments=7
