@@ -25,6 +25,7 @@ public class Controller implements ActionListener{
                 view.dispose();
                 view = new Spielbrett(/*this*/);
                 model.setView(view);
+                
             }
             else{   
                 //falls fehlgeschlagen
@@ -47,6 +48,9 @@ public class Controller implements ActionListener{
         //Spielbrettbetrieb
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
             ((Spielbrett)view).Coinsetzen();
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){
+            ((Spielbrett)view).Coinsetzen2();
         }
            }
    }

@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.awt.*;
 import javax.imageio.*;
+import javax.swing.JOptionPane;
 public class Spielbrett extends JFrame implements View{
     /**
      * The WIDTH of the JFrame:
@@ -64,9 +65,9 @@ public class Spielbrett extends JFrame implements View{
     private JButton b47 = new JButton();//gerade
     private JButton b48 = new JButton();//1-18
     private JButton b49 = new JButton();//0
-
-    
-    
+    // private String[] chiton = {"200","300","400"};
+    // private JComboBox comboBox = new JComboBox(chiton);
+    private ComboBox comboBox = new ComboBox();
     private Bild bild;
     //Controller:
     private Controller controller;
@@ -133,7 +134,8 @@ public class Spielbrett extends JFrame implements View{
         b47.addActionListener(controller);
         b48.addActionListener(controller);
         b49.addActionListener(controller);
-       
+        comboBox.setBounds(200,200,300,300);
+        add(comboBox);
         //adding components
         //addB4();
         //addB2();
@@ -145,7 +147,10 @@ public class Spielbrett extends JFrame implements View{
 
         this.setVisible(true);
     }
-
+    //public void addVideo(){
+      //  Jvideo video=
+        
+    //}
     public void setControllerView(){
         controller.setView(this);
     }
@@ -404,10 +409,22 @@ public class Spielbrett extends JFrame implements View{
     }
     public void Coinsetzen(){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/1.jpg"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
 
             bild = new Bild(image); 
-            bild.setBounds(69,69,400,400);
+            bild.setBounds(600,400,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        }
+    }
+    public void Coinsetzen2(){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/schwarzerCoin.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(600,400,100,100);
             add(bild);
             this.repaint();
         }
