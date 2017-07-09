@@ -134,7 +134,7 @@ public class Spielbrett extends JFrame implements View{
         b47.addActionListener(controller);
         b48.addActionListener(controller);
         b49.addActionListener(controller);
-        comboBox.setBounds(200,200,300,300);
+        comboBox.setBounds(100,200,300,300);
         add(comboBox);
         //adding components
         //addB4();
