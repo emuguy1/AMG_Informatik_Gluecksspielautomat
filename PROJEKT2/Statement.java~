@@ -1,0 +1,23 @@
+ /**
+ * Kurzbeschreibung der Klasse Statement:
+ * ...
+ * @author (Ihr Name) 
+ * @version (Versions Nummer oder Datum)
+ */
+public class Statement {
+//=========== Klassen-Attribute und -Methoden ==========  
+  
+
+//=========== Objekt-Attribute =========================  
+
+
+//=========== Konstruktor(en) ==========================  
+  /**
+   * Default-Konstruktor f�r Objekte der Klasse Statement
+   */
+  public Statement()  {  
+    //Objektvariablen initialisieren  
+  }
+//=========== Objekt-Methoden ==========================  
+
+} // Ende der Klasse Statement
