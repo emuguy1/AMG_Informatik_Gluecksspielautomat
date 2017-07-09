@@ -19,6 +19,7 @@ public class ComboBox extends JPanel
         JComboBox petList = new JComboBox(petStrings);
         petList.setSelectedIndex(0);
         petList.addActionListener(this);
+        petList.setBackground(new Color(30,114,37));
  
         //Set up the picture.
         picture = new JLabel();
@@ -28,7 +29,7 @@ public class ComboBox extends JPanel
         picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
  
         //The picture's size
-        picture.setPreferredSize(new Dimension(177, 122+10));//größe ändern!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        picture.setPreferredSize(new Dimension(177, 300+10));//größe ändern!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  
         //Lay out the demo.
         add(petList, BorderLayout.PAGE_START);
