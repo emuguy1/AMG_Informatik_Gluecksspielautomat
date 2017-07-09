@@ -15,55 +15,55 @@ public class Spielbrett extends JFrame implements View{
      */
     private final int HEIGHT = 690;
     
-    private JButton b1 = new JButton("1");
-    private JButton b2 = new JButton("2");
-    private JButton b3 = new JButton("3");
-    private JButton b4 = new JButton("4");
-    private JButton b5 = new JButton("5");
-    private JButton b6 = new JButton("6");
-    private JButton b7 = new JButton("7");
-    private JButton b8 = new JButton("8");
-    private JButton b9 = new JButton("9");
-    private JButton b10 = new JButton("10");
-    private JButton b11 = new JButton("11");
-    private JButton b12 = new JButton("12");
-    private JButton b13 = new JButton("13");
-    private JButton b14 = new JButton("14");
-    private JButton b15 = new JButton("15");
-    private JButton b16 = new JButton("16");
-    private JButton b17 = new JButton("17");
-    private JButton b18 = new JButton("18");
-    private JButton b19 = new JButton("19");
-    private JButton b20 = new JButton("20");
-    private JButton b21 = new JButton("21");
-    private JButton b22 = new JButton("22");
-    private JButton b23 = new JButton("23");
-    private JButton b24 = new JButton("24");
-    private JButton b25 = new JButton("25");
-    private JButton b26 = new JButton("26");
-    private JButton b27 = new JButton("27");
-    private JButton b28 = new JButton("28");
-    private JButton b29 = new JButton("29");
-    private JButton b30 = new JButton("30");
-    private JButton b31 = new JButton("31");
-    private JButton b32 = new JButton("32");
-    private JButton b33 = new JButton("33");
-    private JButton b34 = new JButton("34");
-    private JButton b35 = new JButton("35");
-    private JButton b36 = new JButton("36");
-    private JButton b37 = new JButton("37");// erste Reihe
-    private JButton b38 = new JButton("38");//zweite Reihe
-    private JButton b39 = new JButton("39");//dritte Reihe
-    private JButton b40 = new JButton("40");//erste zwölf
-    private JButton b41 = new JButton("41");//zweite zwölf
-    private JButton b42 = new JButton("42");//dritte zwölf
-    private JButton b43 = new JButton("43");//19-36
-    private JButton b44 = new JButton("44");//ungerade
-    private JButton b45 = new JButton("45");//schwarz
-    private JButton b46 = new JButton("46");//rot
-    private JButton b47 = new JButton("47");//gerade
-    private JButton b48 = new JButton("48");//1-18
-    private JButton b49 = new JButton("49");//0
+    private JButton b1 = new JButton();
+    private JButton b2 = new JButton();
+    private JButton b3 = new JButton();
+    private JButton b4 = new JButton();
+    private JButton b5 = new JButton();
+    private JButton b6 = new JButton();
+    private JButton b7 = new JButton();
+    private JButton b8 = new JButton();
+    private JButton b9 = new JButton();
+    private JButton b10 = new JButton();
+    private JButton b11 = new JButton();
+    private JButton b12 = new JButton();
+    private JButton b13 = new JButton();
+    private JButton b14 = new JButton();
+    private JButton b15 = new JButton();
+    private JButton b16 = new JButton();
+    private JButton b17 = new JButton();
+    private JButton b18 = new JButton();
+    private JButton b19 = new JButton();
+    private JButton b20 = new JButton();
+    private JButton b21 = new JButton();
+    private JButton b22 = new JButton();
+    private JButton b23 = new JButton();
+    private JButton b24 = new JButton();
+    private JButton b25 = new JButton();
+    private JButton b26 = new JButton();
+    private JButton b27 = new JButton();
+    private JButton b28 = new JButton();
+    private JButton b29 = new JButton();
+    private JButton b30 = new JButton();
+    private JButton b31 = new JButton();
+    private JButton b32 = new JButton();
+    private JButton b33 = new JButton();
+    private JButton b34 = new JButton();
+    private JButton b35 = new JButton();
+    private JButton b36 = new JButton();
+    private JButton b37 = new JButton();// erste Reihe
+    private JButton b38 = new JButton();//zweite Reihe
+    private JButton b39 = new JButton();//dritte Reihe
+    private JButton b40 = new JButton();//erste zwölf
+    private JButton b41 = new JButton();//zweite zwölf
+    private JButton b42 = new JButton();//dritte zwölf
+    private JButton b43 = new JButton();//19-36
+    private JButton b44 = new JButton();//ungerade
+    private JButton b45 = new JButton();//schwarz
+    private JButton b46 = new JButton();//rot
+    private JButton b47 = new JButton();//gerade
+    private JButton b48 = new JButton();//1-18
+    private JButton b49 = new JButton();//0
 
     
     
@@ -202,7 +202,7 @@ public class Spielbrett extends JFrame implements View{
         add(b48);
         add(b49);
        
-        /* b1.setBackground(new Color(0,0,0,0));
+        b1.setBackground(new Color(0,0,0,0));
         b1.setBorder(null);
         b1.setContentAreaFilled(false);
         b2.setBackground(new Color(0,0,0,0));
@@ -348,7 +348,7 @@ public class Spielbrett extends JFrame implements View{
         b48.setContentAreaFilled(false);
         b49.setBackground(new Color(0,0,0,0));
         b49.setBorder(null);
-        b49.setContentAreaFilled(false);   */
+        b49.setContentAreaFilled(false);   
         b1.setBounds(839,481,38,46);
         b2.setBounds(839,529,38,46);
         b3.setBounds(839,577,38,46);
@@ -402,14 +402,6 @@ public class Spielbrett extends JFrame implements View{
         
         
     }
-    private void addB4(){
-        add(b4);
-        b4.setBounds(801,481,35,46);
-        b4.setBackground(new Color(0,0,0,0));
-        b4.setBorder(null);
-        b4.setContentAreaFilled(false);
-    }
-
     public void Coinsetzen(){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/1.jpg"));
@@ -422,12 +414,151 @@ public class Spielbrett extends JFrame implements View{
         catch(Exception e){
         }
     }
-
-    private void addB2(){
-        add(b2);
-        b2.setBounds(80,20,40,40);
+    public JButton getB1(){
+        return b1;
+    }
+    public JButton getB2(){
+        return b2;
+    }
+    public JButton getB3(){
+        return b3;
     }
     public JButton getB4(){
         return b4;
+    }
+    public JButton getB5(){
+        return b5;
+    }
+    public JButton getB6(){
+        return b6;
+    }
+    public JButton getB7(){
+        return b7;
+    }
+    public JButton getB8(){
+        return b8;
+    }
+    public JButton getB9(){
+        return b9;
+    }
+    public JButton getB10(){
+        return b10;
+    }
+    public JButton getB11(){
+        return b11;
+    }
+    public JButton getB12(){
+        return b12;
+    }
+    public JButton getB13(){
+        return b13;
+    }
+    public JButton getB14(){
+        return b14;
+    }
+    public JButton getB15(){
+        return b15;
+    }
+    public JButton getB16(){
+        return b16;
+    }
+    public JButton getB17(){
+        return b17;
+    }
+    public JButton getB18(){
+        return b18;
+    }
+    public JButton getB19(){
+        return b19;
+    }
+    public JButton getB20(){
+        return b20;
+    }
+    public JButton getB21(){
+        return b21;
+    }
+    public JButton getB22(){
+        return b22;
+    }
+    public JButton getB23(){
+        return b23;
+    }
+    public JButton getB24(){
+        return b24;
+    }
+    public JButton getB25(){
+        return b25;
+    }
+    public JButton getB26(){
+        return b26;
+    }
+    public JButton getB27(){
+        return b27;
+    }
+    public JButton getB28(){
+        return b28;
+    }
+    public JButton getB29(){
+        return b29;
+    }
+    public JButton getB30(){
+        return b30;
+    }
+    public JButton getB31(){
+        return b31;
+    }
+    public JButton getB32(){
+        return b32;
+    }
+    public JButton getB33(){
+        return b33;
+    }
+    public JButton getB34(){
+        return b34;
+    }
+    public JButton getB35(){
+        return b35;
+    }
+    public JButton getB36(){
+        return b36;
+    }
+    public JButton getB37(){
+        return b37;
+    }
+    public JButton getB38(){
+        return b38;
+    }
+    public JButton getB39(){
+        return b39;
+    }
+    public JButton getB40(){
+        return b40;
+    }
+    public JButton getB41(){
+        return b41;
+    }
+    public JButton getB42(){
+        return b42;
+    }
+    public JButton getB43(){
+        return b43;
+    }
+    public JButton getB44(){
+        return b44;
+    }
+    public JButton getB45(){
+        return b45;
+    }
+    public JButton getB46(){
+        return b46;
+    }
+    public JButton getB47(){
+        return b47;
+    }
+    public JButton getB48(){
+        return b48;
+    }
+    public JButton getB49(){
+        return b49;
     }
 }

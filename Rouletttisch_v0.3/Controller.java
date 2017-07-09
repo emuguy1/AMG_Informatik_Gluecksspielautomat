@@ -46,6 +46,7 @@ public class Controller implements ActionListener{
         }
         //Spielbrettbetrieb
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
+            ((Spielbrett)view).Coinsetzen();
         }
            }
    }
