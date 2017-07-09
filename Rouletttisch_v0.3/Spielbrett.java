@@ -51,22 +51,20 @@ public class Spielbrett extends JFrame implements View{
     private JButton b34 = new JButton("34");
     private JButton b35 = new JButton("35");
     private JButton b36 = new JButton("36");
-    private JButton b37 = new JButton("37");
-    private JButton b38 = new JButton("38");
-    private JButton b39 = new JButton("39");
-    private JButton b40 = new JButton("40");
-    private JButton b41 = new JButton("41");
-    private JButton b42 = new JButton("42");
-    private JButton b43 = new JButton("43");
-    private JButton b44 = new JButton("44");
-    private JButton b45 = new JButton("45");
-    private JButton b46 = new JButton("46");
-    private JButton b47 = new JButton("47");
-    private JButton b48 = new JButton("48");
-    private JButton b49 = new JButton("49");
-    private JButton b50 = new JButton("50");
-    private JButton b51 = new JButton("51");
-    private JButton b52 = new JButton("52");
+    private JButton b37 = new JButton("37");// erste Reihe
+    private JButton b38 = new JButton("38");//zweite Reihe
+    private JButton b39 = new JButton("39");//dritte Reihe
+    private JButton b40 = new JButton("40");//erste zwölf
+    private JButton b41 = new JButton("41");//zweite zwölf
+    private JButton b42 = new JButton("42");//dritte zwölf
+    private JButton b43 = new JButton("43");//schwarz
+    private JButton b44 = new JButton("44");//rot
+    private JButton b45 = new JButton("45");//0
+    private JButton b46 = new JButton("46");//1-18
+    private JButton b47 = new JButton("47");//19-36
+    private JButton b48 = new JButton("48");//gerade
+    private JButton b49 = new JButton("49");//ungerade
+
     
     
     private Bild bild;
@@ -135,9 +133,7 @@ public class Spielbrett extends JFrame implements View{
         b47.addActionListener(controller);
         b48.addActionListener(controller);
         b49.addActionListener(controller);
-        b50.addActionListener(controller);
-        b51.addActionListener(controller);
-        b52.addActionListener(controller);
+       
         //adding components
         addB4();
         addB2();
@@ -205,12 +201,10 @@ public class Spielbrett extends JFrame implements View{
         add(b47);
         add(b48);
         add(b49);
-        add(b50);
-        add(b51);
-        add(b52);
-        /* //b1.setBackground(new Color(0,0,0,0));
-        //b1.setBorder(null);
-        //b1.setContentAreaFilled(false);
+       
+        /* b1.setBackground(new Color(0,0,0,0));
+        b1.setBorder(null);
+        b1.setContentAreaFilled(false);
         b2.setBackground(new Color(0,0,0,0));
         b2.setBorder(null);
         b2.setContentAreaFilled(false);
@@ -354,16 +348,7 @@ public class Spielbrett extends JFrame implements View{
         b48.setContentAreaFilled(false);
         b49.setBackground(new Color(0,0,0,0));
         b49.setBorder(null);
-        b49.setContentAreaFilled(false);
-        b50.setBackground(new Color(0,0,0,0));
-        b50.setBorder(null);
-        b50.setContentAreaFilled(false);
-        b51.setBackground(new Color(0,0,0,0));
-        b51.setBorder(null);
-        b51.setContentAreaFilled(false);
-        b52.setBackground(new Color(0,0,0,0));
-        b52.setBorder(null);
-        b52.setContentAreaFilled(false);  */
+        b49.setContentAreaFilled(false);*/
         b1.setBounds(839,481,38,46);
         b2.setBounds(839,529,38,46);
         b3.setBounds(839,577,38,46);
@@ -392,20 +377,20 @@ public class Spielbrett extends JFrame implements View{
         b26.setBounds(530,529,35,46);
         b27.setBounds(530,577,35,46);
         b28.setBounds(491,481,35,46);
-        b29.setBounds(491,481,35,46);
-        b30.setBounds(491,529,35,46);
-        b31.setBounds(801,577,35,46);
-        b32.setBounds(801,481,35,46);
-        b33.setBounds(801,481,35,46);
-        b34.setBounds(801,481,35,46);
-        b35.setBounds(801,481,35,46);
-        b36.setBounds(801,481,35,46);
-        b37.setBounds(801,481,35,46);
-        b38.setBounds(801,481,35,46);
-        b39.setBounds(801,481,35,46);
-        b40.setBounds(801,481,35,46);
-        b41.setBounds(801,481,35,46);
-        b42.setBounds(801,481,35,46);
+        b29.setBounds(491,529,35,46);
+        b30.setBounds(491,577,35,46);
+        b31.setBounds(453,481,35,46);
+        b32.setBounds(453,529,35,46);
+        b33.setBounds(453,577,35,46);
+        b34.setBounds(414,481,35,46);
+        b35.setBounds(414,529,35,46);
+        b36.setBounds(414,577,35,46);
+        b37.setBounds(375,481,35,46);
+        b38.setBounds(375,529,35,46);
+        b39.setBounds(375,577,35,46);
+        b40.setBounds(414,442,153,36);
+        b41.setBounds(568,442,153,36);
+        b42.setBounds(722,442,155,36);
         b43.setBounds(801,481,35,46);
         b44.setBounds(801,481,35,46);
         b45.setBounds(801,481,35,46);
@@ -413,9 +398,7 @@ public class Spielbrett extends JFrame implements View{
         b47.setBounds(801,481,35,46);
         b48.setBounds(801,481,35,46);
         b49.setBounds(801,481,35,46);
-        b50.setBounds(801,481,35,46);
-        b51.setBounds(801,481,35,46);
-        b52.setBounds(801,481,35,46);
+       
         
         
     }
