@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 public class Controller implements ActionListener{
     public View view;
     public Model model;
-    public Controller(){
-        
+    public Controller(Model m){
+     model = m;   
     }
     public void setView(View v){
         view = v;
@@ -23,7 +23,7 @@ public class Controller implements ActionListener{
             if(model.anmelden(((Login)view).getBenutzername(),((Login)view).getPasswort())){
                 //TODO
                 view.dispose();
-                view = new Spielbrett(/*this*/);
+                view = new Spielbrett(this,model);
                 model.setView(view);
                 
             }
@@ -37,7 +37,7 @@ public class Controller implements ActionListener{
            if(model.registrieren(((Login)view).getBenutzername(),((Login)view).getPasswort())){
                 //TODO
                 view.dispose();
-                view = new Spielbrett(/*this*/);
+                view = new Spielbrett(this, model);
                 model.setView(view);
             }
             else{   

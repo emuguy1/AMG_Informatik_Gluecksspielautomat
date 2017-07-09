@@ -165,8 +165,8 @@ public class Datenbankzugriff{
     return 0;
   }
   
-  public boolean Registrieren(String Benutzername, String Passwort){
-    if(DatensatzVergleichen(Benutzername)==false){
+  public boolean registrieren(String Benutzername, String Passwort){
+    if(datensatzVergleichen(Benutzername)==false){
       return false;
     }
     else{
@@ -184,7 +184,7 @@ public class Datenbankzugriff{
     }
   }
   
-  public boolean DatensatzVergleichen(String Name){
+  public boolean datensatzVergleichen(String Name){
     //for(int i=0;<=i;i++){
     String s="SELECT Benutzername FROM Spielerliste WHERE Benutzername='"+Name+"';";
     String vergleichswert=datenbankzugriffTestenString(s,1);
@@ -204,7 +204,7 @@ public class Datenbankzugriff{
   }
   
   
-  public boolean Anmelden(String Name, String wort){
+  public boolean anmelden(String Name, String wort){
    String s="SELECT Benutzername FROM Spielerliste WHERE (Benutzername='"+Name+"' AND Passwort='"+wort+"')  ;";
     String vergleichswert=datenbankzugriffTestenString(s,1);
     if(vergleichswert==null){

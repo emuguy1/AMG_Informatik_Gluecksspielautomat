@@ -65,7 +65,7 @@ public class Spielbrett extends JFrame implements View{
     private JButton b47 = new JButton();//gerade
     private JButton b48 = new JButton();//1-18
     private JButton b49 = new JButton();//0
-    private ComboBox comboBox = new ComboBox();
+    private ComboBox comboBox = new comboBox();
     private Bild bild;
     //Controller:
     private Controller controller;

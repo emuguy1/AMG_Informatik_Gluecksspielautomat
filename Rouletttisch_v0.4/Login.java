@@ -134,6 +134,6 @@ public class Login extends JFrame implements View{
 	}
 	public String getPasswort(){
 	   System.out.println(tf2.getPassword());
-	   return null;
+	   return tf2.getText().toString();
 	}
 }
