@@ -31,7 +31,7 @@ public class Datenbankzugriff{
     
     //Treiber laden
     try{
-      Class.forName("org.sqlite.JBC");
+      Class.forName("org.sqlite.JDBC");
       System.out.println("Treiber erfolgreich geladen ...");
     }
     catch(ClassNotFoundException e){
@@ -72,7 +72,7 @@ public class Datenbankzugriff{
 
   
     try{
-      Class.forName("org.sqlite.JBC");
+      Class.forName("org.sqlite.JDBC");
       System.out.println("Treiber erfolgreich geladen ...");
     }
     catch(ClassNotFoundException e){
@@ -122,7 +122,7 @@ public class Datenbankzugriff{
 
   
     try{
-      Class.forName("org.sqlite.JBC");
+      Class.forName("org.sqlite.JDBC");
       System.out.println("Treiber erfolgreich geladen ...");
     }
     catch(ClassNotFoundException e){

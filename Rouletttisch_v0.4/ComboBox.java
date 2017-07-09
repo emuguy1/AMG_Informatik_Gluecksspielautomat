@@ -15,10 +15,9 @@ public class ComboBox extends JPanel
  
         String[] petStrings = { "weiserCoin", "roterCoin", "blauerCoin", "grünerCoin", "500" };
  
-        //Create the combo box, select the item at index 4.
-        //Indices start at 0, so 4 specifies the pig.
+        //Create the combo box
         JComboBox petList = new JComboBox(petStrings);
-        petList.setSelectedIndex(4);
+        petList.setSelectedIndex(0);
         petList.addActionListener(this);
  
         //Set up the picture.
@@ -28,9 +27,7 @@ public class ComboBox extends JPanel
         updateLabel(petStrings[petList.getSelectedIndex()]);
         picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
  
-        //The preferred size is hard-coded to be the width of the
-        //widest image and the height of the tallest image + the border.
-        //A real program would compute this.
+        //The picture's size
         picture.setPreferredSize(new Dimension(177, 122+10));//größe ändern!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  
         //Lay out the demo.
