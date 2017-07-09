@@ -31,7 +31,7 @@ public class Datenbankzugriff{
     
     //Treiber laden
     try{
-      Class.forName("org.sqlite.JBC");
+      Class.forName("org.sqlite.JDBC");
       System.out.println("Treiber erfolgreich geladen ...");
     }
     catch(ClassNotFoundException e){
@@ -186,7 +186,7 @@ public class Datenbankzugriff{
   
   public boolean DatensatzVergleichen(String Name){
     //for(int i=0;<=i;i++){
-    String s="SELECT Benutzername FROM Spielerliste WHERE Benutzername="+Name+";";
+    String s="SELECT Benutzername FROM Spielerliste WHERE Benutzername='"+Name+"';";
     String vergleichswert=datenbankzugriffTestenString(s,1);
     if(vergleichswert==null){
       return true;
