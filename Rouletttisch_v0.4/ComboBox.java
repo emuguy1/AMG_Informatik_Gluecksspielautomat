@@ -9,6 +9,7 @@ import javax.imageio.*;
 public class ComboBox extends JPanel
                           implements ActionListener {
     JLabel picture;
+    private int wert=0;
  
     public ComboBox() {
         super(new BorderLayout());
@@ -43,45 +44,44 @@ public class ComboBox extends JPanel
         String petName = (String)cb.getSelectedItem();
         updateLabel(petName);
     }
- 
     protected void updateLabel(String name) {
         if(name.equals("1")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´weißerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            wertSetzen(1);
         }
         else if(name.equals("10")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´roterCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            wertSetzen(10);
         }
         else if(name.equals("50")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´blauerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            wertSetzen(50);
         }
         else if(name.equals("100")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´grünerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            wertSetzen(100);
         }
         else if(name.equals("500")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´schwarzerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            wertSetzen(500);
         }
-        else{
-        ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/"+name+".png");
-        picture.setIcon(icon);
-        picture.setToolTipText("A drawing of a " + name.toLowerCase());
-        if (icon != null) {
-            picture.setText(null);
-        } else {
-            picture.setText("Image not found");
-        }
-       }
     }
- 
+    private void wertSetzen(int i){
+        wert=i;
+    }
+    public int wertGeben(){
+        return wert;
+    }
     /** Returns an ImageIcon, or null if the path was invalid. */
     protected static ImageIcon createImageIcon(String path) {
         

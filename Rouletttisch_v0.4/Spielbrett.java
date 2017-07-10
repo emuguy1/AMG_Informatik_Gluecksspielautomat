@@ -67,6 +67,7 @@ public class Spielbrett extends JFrame implements View{
     private JButton b49 = new JButton();//0
     private ComboBox comboBox = new ComboBox();
     private Bild bild;
+    private int wert=0;
     //Controller:
     private Controller controller;
     private JMenuBar menuBar = new JMenuBar();;
@@ -430,6 +431,66 @@ public class Spielbrett extends JFrame implements View{
         }
         catch(Exception e){
         }
+    } 
+    public void roterCoinSetzen(int i, int o){
+       try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(i,o,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        } 
+    }
+    public void grünerCoinSetzen(int i, int v){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(i,v,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        }
+    }
+    public void weißerCoinSetzen(int i, int v){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(i,v,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        }
+    }
+    public void blauerCoinSetzen(int i, int v){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(i,v,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        }
+    }
+    public void schwarzerCoinSetzen(int i, int v){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(i,v,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        }
     }
     public JButton getB1(){
         return b1;
@@ -578,4 +639,10 @@ public class Spielbrett extends JFrame implements View{
     public JButton getB49(){
         return b49;
     }
-}
+    public void wertSetzen(){
+        wert=comboBox.wertGeben();
+    }
+    public int wertGeben(){
+        return wert;
+    }
+ }
