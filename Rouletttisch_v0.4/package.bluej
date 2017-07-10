@@ -50,7 +50,7 @@ dependency9.type=UsesDependency
 objectbench.height=100
 objectbench.width=1346
 package.editor.height=547
-package.editor.width=1543
+package.editor.width=1248
 package.editor.x=-8
 package.editor.y=-8
 package.numDependencies=16
@@ -97,17 +97,10 @@ target2.typeParameters=
 target2.width=80
 target2.x=440
 target2.y=100
-<<<<<<< HEAD
-target3.editor.height=735
-target3.editor.width=1378
-target3.editor.x=-7
-target3.editor.y=0
-=======
 target3.editor.height=700
 target3.editor.width=900
 target3.editor.x=414
 target3.editor.y=167
->>>>>>> 4350a64d71be84dc10c5babf8b151758cd4fa17c
 target3.height=50
 target3.name=Spiel
 target3.showInterface=false
@@ -153,7 +146,7 @@ target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
 target6.width=120
-target6.x=1060
+target6.x=1120
 target6.y=50
 target7.editor.height=700
 target7.editor.width=900

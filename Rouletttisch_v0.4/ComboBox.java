@@ -13,7 +13,7 @@ public class ComboBox extends JPanel
     public ComboBox() {
         super(new BorderLayout());
  
-        String[] petStrings = { "weiserCoin", "roterCoin", "blauerCoin", "grünerCoin", "500" };
+        String[] petStrings = { "1", "10", "50", "100", "500" };
  
         //Create the combo box
         JComboBox petList = new JComboBox(petStrings);
@@ -46,27 +46,27 @@ public class ComboBox extends JPanel
  
     protected void updateLabel(String name) {
         if(name.equals("1")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/"+name+".png");
+            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´weißerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
         }
         else if(name.equals("10")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/"+name+".png");
+            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´roterCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
         }
         else if(name.equals("50")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/"+name+".png");
+            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´blauerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
         }
         else if(name.equals("100")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/"+name+".png");
+            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´grünerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
         }
         else if(name.equals("500")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/schwarzerCoin.png");
+            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´schwarzerCoin1.png");
             picture.setIcon(icon);
             picture.setToolTipText("A drawing of a " + name.toLowerCase());
         }
