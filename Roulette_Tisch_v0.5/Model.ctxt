@@ -1,13 +1,12 @@
 #BlueJ class context
-comment0.target=Model
+comment0.params=benutzername\ passwort
+comment0.target=boolean\ anmelden(java.lang.String,\ java.lang.String)
 comment1.params=benutzername\ passwort
-comment1.target=boolean\ anmelden(java.lang.String,\ java.lang.String)
-comment2.params=benutzername\ passwort
-comment2.target=boolean\ registrieren(java.lang.String,\ java.lang.String)
-comment3.params=v
-comment3.target=void\ setView(View)
+comment1.target=boolean\ registrieren(java.lang.String,\ java.lang.String)
+comment2.params=v
+comment2.target=void\ setView(View)
+comment3.params=
+comment3.target=java.lang.String\ getBetrag()
 comment4.params=
-comment4.target=java.lang.String\ getBetrag()
-comment5.params=
-comment5.target=java.lang.String\ getBenutzername()
-numComments=6
+comment4.target=java.lang.String\ getBenutzername()
+numComments=5

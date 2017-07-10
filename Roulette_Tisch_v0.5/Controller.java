@@ -56,6 +56,23 @@ public class Controller implements ActionListener{
             model.setView(view);
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
+            int i=799;
+            int v=481;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
             ((Spielbrett)view).Coinsetzen();
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){

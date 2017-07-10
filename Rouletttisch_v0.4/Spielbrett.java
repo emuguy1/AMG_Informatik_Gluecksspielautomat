@@ -73,20 +73,19 @@ public class Spielbrett extends JFrame implements View{
     private ComboBox comboBox = new ComboBox();
     //BILD
     private Bild bild;
-<<<<<<< HEAD
+
     private int wert=0;
     //Controller:
-    private Controller controller;
     private JMenuBar menuBar = new JMenuBar();;
-=======
+
     
     //MENÜBAR
-    private JMenuBar menuBar = new JMenuBar();
+ 
     private JMenuItem mItem1 = new JMenuItem("Einstellungen");
     private JMenuItem mItem2 = new JMenuItem("Abmelden"); 
     private JLabel lBetrag = new JLabel("Betrag: ");
     private JMenu mBenutzername= new JMenu();
->>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485
+
     private JMenu menu = new JMenu("Menü");
     public Spielbrett(Controller c, Model m){
         controller = new Controller(m);
@@ -615,37 +614,13 @@ public class Spielbrett extends JFrame implements View{
         
         
     }
-<<<<<<< HEAD
-    public void Coinsetzen(){
-        try{
+
+    public void roterCoinSetzen(int i, int v){
+       try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
 
             bild = new Bild(image); 
-            bild.setBounds(600,400,100,100);
-            add(bild);
-            this.repaint();
-        }
-        catch(Exception e){
-        }
-    }
-    public void Coinsetzen2(){
-        try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/schwarzerCoin.png"));
-
-            bild = new Bild(image); 
-            bild.setBounds(600,400,100,100);
-            add(bild);
-            this.repaint();
-        }
-        catch(Exception e){
-        }
-    } 
-    public void roterCoinSetzen(int i, int o){
-       try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
-
-            bild = new Bild(image); 
-            bild.setBounds(i,o,100,100);
+            bild.setBounds(i,v,100,100);
             add(bild);
             this.repaint();
         }
@@ -654,7 +629,7 @@ public class Spielbrett extends JFrame implements View{
     }
     public void grünerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinergrünerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,100,100);
@@ -666,7 +641,7 @@ public class Spielbrett extends JFrame implements View{
     }
     public void weißerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerweißerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,100,100);
@@ -678,7 +653,7 @@ public class Spielbrett extends JFrame implements View{
     }
     public void blauerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerblauerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,100,100);
@@ -690,7 +665,7 @@ public class Spielbrett extends JFrame implements View{
     }
     public void schwarzerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"kleinerschwarzerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,100,100);
@@ -700,111 +675,9 @@ public class Spielbrett extends JFrame implements View{
         catch(Exception e){
         }
     }
-    public JButton getB1(){
-        return b1;
-    }
-    public JButton getB2(){
-        return b2;
-    }
-    public JButton getB3(){
-        return b3;
-    }
-    public JButton getB4(){
-        return b4;
-    }
-    public JButton getB5(){
-        return b5;
-    }
-    public JButton getB6(){
-        return b6;
-    }
-    public JButton getB7(){
-        return b7;
-    }
-    public JButton getB8(){
-        return b8;
-    }
-    public JButton getB9(){
-        return b9;
-    }
-    public JButton getB10(){
-        return b10;
-    }
-    public JButton getB11(){
-        return b11;
-    }
-    public JButton getB12(){
-        return b12;
-    }
-    public JButton getB13(){
-        return b13;
-    }
-    public JButton getB14(){
-        return b14;
-    }
-    public JButton getB15(){
-        return b15;
-    }
-    public JButton getB16(){
-        return b16;
-    }
-    public JButton getB17(){
-        return b17;
-    }
-    public JButton getB18(){
-        return b18;
-    }
-    public JButton getB19(){
-        return b19;
-    }
-    public JButton getB20(){
-        return b20;
-    }
-    public JButton getB21(){
-        return b21;
-    }
-    public JButton getB22(){
-        return b22;
-    }
-    public JButton getB23(){
-        return b23;
-    }
-    public JButton getB24(){
-        return b24;
-    }
-    public JButton getB25(){
-        return b25;
-    }
-    public JButton getB26(){
-        return b26;
-    }
-    public JButton getB27(){
-        return b27;
-    }
-    public JButton getB28(){
-        return b28;
-    }
-    public JButton getB29(){
-        return b29;
-    }
-    public JButton getB30(){
-        return b30;
-    }
-    public JButton getB31(){
-        return b31;
-    }
-    public JButton getB32(){
-        return b32;
-    }
-    public JButton getB33(){
-        return b33;
-    }
-    public JButton getB34(){
-        return b34;
-=======
+
     public JMenuItem getMItem1(){
         return mItem1;
->>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485
     }
     public JMenuItem getMItem2(){
         return mItem2;

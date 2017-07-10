@@ -75,7 +75,7 @@ public class ComboBox extends JPanel
             wertSetzen(500);
         }
     }
-<<<<<<< HEAD
+
     private void wertSetzen(int i){
         wert=i;
     }
@@ -83,8 +83,7 @@ public class ComboBox extends JPanel
         return wert;
     }
     /** Returns an ImageIcon, or null if the path was invalid. */
-=======
->>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485
+
     protected static ImageIcon createImageIcon(String path) {
        return new ImageIcon(path);
     }
