@@ -14,11 +14,10 @@ public class ComboBox extends JPanel
     public ComboBox() {
         super(new BorderLayout());
  
-        String[] petStrings = { "1", "10", "50", "100", "500" };
+        String[] zahlen = { "1", "10", "50", "100", "500" };
  
         //Create the combo box
-        JComboBox petList = new JComboBox(petStrings);
-        petList.setSelectedIndex(0);
+        JComboBox petList = new JComboBox(zahlen);
         petList.addActionListener(this);
         petList.setBackground(new Color(30,114,37));
  
@@ -26,13 +25,13 @@ public class ComboBox extends JPanel
         picture = new JLabel();
         picture.setFont(picture.getFont().deriveFont(Font.ITALIC));
         picture.setHorizontalAlignment(JLabel.CENTER);
-        updateLabel(petStrings[petList.getSelectedIndex()]);
+        updateLabel(zahlen[petList.getSelectedIndex()]);
         picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
  
         //The picture's size
         picture.setPreferredSize(new Dimension(177, 300+10));//größe ändern!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  
-        //Lay out the demo.
+        //Lay out the combo box
         add(petList, BorderLayout.PAGE_START);
         add(picture, BorderLayout.PAGE_END);
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
@@ -76,6 +75,7 @@ public class ComboBox extends JPanel
             wertSetzen(500);
         }
     }
+<<<<<<< HEAD
     private void wertSetzen(int i){
         wert=i;
     }
@@ -83,10 +83,9 @@ public class ComboBox extends JPanel
         return wert;
     }
     /** Returns an ImageIcon, or null if the path was invalid. */
+=======
+>>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485
     protected static ImageIcon createImageIcon(String path) {
-        
-        
-            return new ImageIcon(path);
-        
+       return new ImageIcon(path);
     }
 }

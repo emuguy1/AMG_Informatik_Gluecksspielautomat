@@ -46,6 +46,15 @@ public class Controller implements ActionListener{
             }
         }
         //Spielbrettbetrieb
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem1()){
+            //EINSTELLUNGEN
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem2()){
+            //ABMELDEN
+            view.dispose();
+            view = new Login(this);
+            model.setView(view);
+        }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
             int i=799;
             int v=481;
@@ -68,8 +77,8 @@ public class Controller implements ActionListener{
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){
             ((Spielbrett)view).Coinsetzen2();
         }
-           }
-   }
+    }
+}
 
 
 

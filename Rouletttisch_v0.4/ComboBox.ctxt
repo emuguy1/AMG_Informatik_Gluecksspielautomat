@@ -1,4 +1,5 @@
 #BlueJ class context
+<<<<<<< HEAD
 comment0.params=
 comment0.target=ComboBox()
 comment1.params=e
@@ -14,3 +15,16 @@ comment5.params=path
 comment5.target=javax.swing.ImageIcon\ createImageIcon(java.lang.String)
 comment5.text=Returns\ an\ ImageIcon,\ or\ null\ if\ the\ path\ was\ invalid.
 numComments=6
+=======
+comment0.target=ComboBox
+comment1.params=
+comment1.target=ComboBox()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=Listens\ to\ the\ combo\ box.
+comment3.params=name
+comment3.target=void\ updateLabel(java.lang.String)
+comment4.params=path
+comment4.target=javax.swing.ImageIcon\ createImageIcon(java.lang.String)
+numComments=5
+>>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485

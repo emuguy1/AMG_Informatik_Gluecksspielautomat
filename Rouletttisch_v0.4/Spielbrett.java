@@ -15,7 +15,11 @@ public class Spielbrett extends JFrame implements View{
      * The HEIGHT of the JFrame:
      */
     private final int HEIGHT = 690;
+    //Model
     private Model model;
+    //Controller:
+    private Controller controller;
+    //BUTTTONS
     private JButton b1 = new JButton();
     private JButton b2 = new JButton();
     private JButton b3 = new JButton();
@@ -65,12 +69,24 @@ public class Spielbrett extends JFrame implements View{
     private JButton b47 = new JButton();//gerade
     private JButton b48 = new JButton();//1-18
     private JButton b49 = new JButton();//0
+    //AUSWAHLFELD FÜR COINS
     private ComboBox comboBox = new ComboBox();
+    //BILD
     private Bild bild;
+<<<<<<< HEAD
     private int wert=0;
     //Controller:
     private Controller controller;
     private JMenuBar menuBar = new JMenuBar();;
+=======
+    
+    //MENÜBAR
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenuItem mItem1 = new JMenuItem("Einstellungen");
+    private JMenuItem mItem2 = new JMenuItem("Abmelden"); 
+    private JLabel lBetrag = new JLabel("Betrag: ");
+    private JMenu mBenutzername= new JMenu();
+>>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485
     private JMenu menu = new JMenu("Menü");
     public Spielbrett(Controller c, Model m){
         controller = new Controller(m);
@@ -143,20 +159,211 @@ public class Spielbrett extends JFrame implements View{
         addFieldButtons();
 
         //Coinsetzen();
-        menuBar.add(menu);
-        this.setJMenuBar(menuBar);
-
+        setUpMenu();
+        
         this.setVisible(true);
     }
-    //public void addVideo(){
-      //  Jvideo video=
+    public void setUpMenu(){
+        //ACTIONLISTENER
+        mItem1.addActionListener(controller);
+        mItem2.addActionListener(controller);
+        //SET UP THE MENU 
+        menu.add(mItem1);
+        mBenutzername.add(mItem2);
+        menuBar.add(menu);
+        menuBar.add(Box.createHorizontalGlue()); 
+        menuBar.add(lBetrag);
+        menuBar.add(mBenutzername);
+        menuBar.setBackground(new Color(255,255,255));
+        menuBar.setBorder(BorderFactory.createMatteBorder(1, 0, 1, 0, Color.gray));
+        benutzernameAnzeigen();
+        betragAnzeigen();
         
-    //}
+        this.setJMenuBar(menuBar);
+    }
     public void setControllerView(){
         controller.setView(this);
     }
-    //BufferedImage image = Image.IO.read(newFile(System.getProperty("user.dir")+"/roulette.jpg"));
-    //add(new Bild(image));
+    public void benutzernameAnzeigen(){
+        String d = model.getBenutzername();
+        mBenutzername.setText(d+"  ");
+    }
+    public void betragAnzeigen(){
+        String d = model.getBetrag();
+        lBetrag.setText("Betrag: "+d+"  ");
+    }
+    public void Coinsetzen(){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(600,400,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+            
+        }
+    }
+    public void Coinsetzen2(){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/schwarzerCoin.png"));
+
+            bild = new Bild(image); 
+            bild.setBounds(600,400,100,100);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+        }
+    }
+    public JButton getB1(){
+        return b1;
+    }
+    public JButton getB2(){
+        return b2;
+    }
+    public JButton getB3(){
+        return b3;
+    }
+    public JButton getB4(){
+        return b4;
+    }
+    public JButton getB5(){
+        return b5;
+    }
+    public JButton getB6(){
+        return b6;
+    }
+    public JButton getB7(){
+        return b7;
+    }
+    public JButton getB8(){
+        return b8;
+    }
+    public JButton getB9(){
+        return b9;
+    }
+    public JButton getB10(){
+        return b10;
+    }
+    public JButton getB11(){
+        return b11;
+    }
+    public JButton getB12(){
+        return b12;
+    }
+    public JButton getB13(){
+        return b13;
+    }
+    public JButton getB14(){
+        return b14;
+    }
+    public JButton getB15(){
+        return b15;
+    }
+    public JButton getB16(){
+        return b16;
+    }
+    public JButton getB17(){
+        return b17;
+    }
+    public JButton getB18(){
+        return b18;
+    }
+    public JButton getB19(){
+        return b19;
+    }
+    public JButton getB20(){
+        return b20;
+    }
+    public JButton getB21(){
+        return b21;
+    }
+    public JButton getB22(){
+        return b22;
+    }
+    public JButton getB23(){
+        return b23;
+    }
+    public JButton getB24(){
+        return b24;
+    }
+    public JButton getB25(){
+        return b25;
+    }
+    public JButton getB26(){
+        return b26;
+    }
+    public JButton getB27(){
+        return b27;
+    }
+    public JButton getB28(){
+        return b28;
+    }
+    public JButton getB29(){
+        return b29;
+    }
+    public JButton getB30(){
+        return b30;
+    }
+    public JButton getB31(){
+        return b31;
+    }
+    public JButton getB32(){
+        return b32;
+    }
+    public JButton getB33(){
+        return b33;
+    }
+    public JButton getB34(){
+        return b34;
+    }
+    public JButton getB35(){
+        return b35;
+    }
+    public JButton getB36(){
+        return b36;
+    }
+    public JButton getB37(){
+        return b37;
+    }
+    public JButton getB38(){
+        return b38;
+    }
+    public JButton getB39(){
+        return b39;
+    }
+    public JButton getB40(){
+        return b40;
+    }
+    public JButton getB41(){
+        return b41;
+    }
+    public JButton getB42(){
+        return b42;
+    }
+    public JButton getB43(){
+        return b43;
+    }
+    public JButton getB44(){
+        return b44;
+    }
+    public JButton getB45(){
+        return b45;
+    }
+    public JButton getB46(){
+        return b46;
+    }
+    public JButton getB47(){
+        return b47;
+    }
+    public JButton getB48(){
+        return b48;
+    }
+    public JButton getB49(){
+        return b49;
+    }
     private void addFieldButtons(){
         add(b1);
         add(b2);
@@ -408,6 +615,7 @@ public class Spielbrett extends JFrame implements View{
         
         
     }
+<<<<<<< HEAD
     public void Coinsetzen(){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
@@ -593,51 +801,13 @@ public class Spielbrett extends JFrame implements View{
     }
     public JButton getB34(){
         return b34;
+=======
+    public JMenuItem getMItem1(){
+        return mItem1;
+>>>>>>> fc72c38f4390c079172e11d798e6ad9e6a1cb485
     }
-    public JButton getB35(){
-        return b35;
-    }
-    public JButton getB36(){
-        return b36;
-    }
-    public JButton getB37(){
-        return b37;
-    }
-    public JButton getB38(){
-        return b38;
-    }
-    public JButton getB39(){
-        return b39;
-    }
-    public JButton getB40(){
-        return b40;
-    }
-    public JButton getB41(){
-        return b41;
-    }
-    public JButton getB42(){
-        return b42;
-    }
-    public JButton getB43(){
-        return b43;
-    }
-    public JButton getB44(){
-        return b44;
-    }
-    public JButton getB45(){
-        return b45;
-    }
-    public JButton getB46(){
-        return b46;
-    }
-    public JButton getB47(){
-        return b47;
-    }
-    public JButton getB48(){
-        return b48;
-    }
-    public JButton getB49(){
-        return b49;
+    public JMenuItem getMItem2(){
+        return mItem2;
     }
     public void wertSetzen(){
         wert=comboBox.wertGeben();
