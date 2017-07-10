@@ -1,0 +1,23 @@
+ /**
+ * Kurzbeschreibung der Klasse sdlhga:
+ * ...
+ * @author (Ihr Name) 
+ * @version (Versions Nummer oder Datum)
+ */
+public class sdlhga {
+//=========== Klassen-Attribute und -Methoden ==========  
+  
+
+//=========== Objekt-Attribute =========================  
+
+
+//=========== Konstruktor(en) ==========================  
+  /**
+   * Default-Konstruktor f�r Objekte der Klasse sdlhga
+   */
+  public sdlhga()  {  
+    //Objektvariablen initialisieren  
+  }
+//=========== Objekt-Methoden ==========================  
+
+} // Ende der Klasse sdlhga
