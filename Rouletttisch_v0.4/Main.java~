@@ -1,34 +1,11 @@
- /**
- * Kurzbeschreibung der Hauptklasse Main :
- * ...
- * @author (Ihr Name) 
- * @version (Versions Nummer oder Datum)
- */
+import javax.swing.*;
 public class Main {
-// ---------------------------------------------------
-// Klassen-Felder und -Methoden
-// ---------------------------------------------------
-
-// --------------------------------------------------
-// Programm-Aufruf
-// --------------------------------------------------
-  /** Programmaufruf 
-    * @param args Kommandozeilenparameter
-    */
-  public static void main(String[] args){
-     
-  }
-// ---------------------------------------------------
-// Objekt-Felder
-// ---------------------------------------------------
-
-// ---------------------------------------------------
-// Konstruktoren
-// ---------------------------------------------------
-
-// ---------------------------------------------------
-// Objekt-Methoden
-// ---------------------------------------------------
-
-
-} // Ende der HauptKlasse Main
+	
+	
+	public static void main(String[] args){
+	  Model m = new Spiel();
+		Login l = new Login(new Controller(m);
+		
+	}
+	
+}

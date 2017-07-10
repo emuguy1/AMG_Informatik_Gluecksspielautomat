@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Spielbrett()
+comment0.params=c\ m
+comment0.target=Spielbrett(Controller,\ Model)
 comment1.params=
 comment1.target=void\ setControllerView()
 comment10.params=

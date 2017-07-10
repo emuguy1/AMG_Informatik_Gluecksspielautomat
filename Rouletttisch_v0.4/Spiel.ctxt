@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Spiel()
+comment1.params=v
+comment1.target=void\ setView(View)
+comment2.params=benutzername\ passwort
+comment2.target=boolean\ anmelden(java.lang.String,\ java.lang.String)
+comment3.params=benutzername\ passwort
+comment3.target=boolean\ registrieren(java.lang.String,\ java.lang.String)
+numComments=4

@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Controller()
+comment0.params=m
+comment0.target=Controller(Model)
 comment1.params=v
 comment1.target=void\ setView(View)
 comment2.params=m

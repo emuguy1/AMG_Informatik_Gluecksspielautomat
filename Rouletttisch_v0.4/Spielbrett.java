@@ -15,7 +15,7 @@ public class Spielbrett extends JFrame implements View{
      * The HEIGHT of the JFrame:
      */
     private final int HEIGHT = 690;
-    
+    private Model model;
     private JButton b1 = new JButton();
     private JButton b2 = new JButton();
     private JButton b3 = new JButton();
@@ -65,16 +65,15 @@ public class Spielbrett extends JFrame implements View{
     private JButton b47 = new JButton();//gerade
     private JButton b48 = new JButton();//1-18
     private JButton b49 = new JButton();//0
-    // private String[] chiton = {"200","300","400"};
-    // private JComboBox comboBox = new JComboBox(chiton);
     private ComboBox comboBox = new ComboBox();
     private Bild bild;
     //Controller:
     private Controller controller;
     private JMenuBar menuBar = new JMenuBar();;
     private JMenu menu = new JMenu("Menü");
-    public Spielbrett(/*Controller c*/){
-        controller = new Controller();
+    public Spielbrett(Controller c, Model m){
+        controller = new Controller(m);
+        model = m;
         setControllerView();
         setTitle("Spielbrett");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
