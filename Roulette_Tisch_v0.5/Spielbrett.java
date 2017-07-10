@@ -1,5 +1,8 @@
 import java.awt.Dimension;
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -73,6 +76,8 @@ public class Spielbrett extends JFrame implements View{
     private ComboBox comboBox = new ComboBox();
     //BILD
     private Bild bild;
+    //SPIELEN BUTTON
+    private JButton bSpielen = new JButton();
     
     //MENÜBAR
     private JMenuBar menuBar = new JMenuBar();
@@ -150,7 +155,23 @@ public class Spielbrett extends JFrame implements View{
         //addB4();
         //addB2();
         addFieldButtons();
+        //SPIELEN BUTTON BILD SETZEN
+        bSpielen.setIcon(new ImageIcon(System.getProperty("user.dir")+"/spielen.png"));
+        bSpielen.setBounds(505,300,258,85); 
+        bSpielen.getModel().addChangeListener(new ChangeListener() {
+                @Override
+                public void stateChanged(ChangeEvent e) {
+                    if (bSpielen.getModel().isRollover()) {
+                        bSpielen.setBorder(BorderFactory.createBevelBorder(1,Color.white,Color.gray,Color.gray,Color.white));
+                    } else {
+                        bSpielen.setBorder(BorderFactory.createLineBorder(Color.gray, 2));
+                    }
+                }
+            });
 
+        
+        
+        add(bSpielen);
         //Coinsetzen();
         setUpMenu();
         
