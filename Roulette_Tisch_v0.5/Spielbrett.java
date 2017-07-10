@@ -186,6 +186,7 @@ public class Spielbrett extends JFrame implements View{
         menu.add(mItem1);
         mBenutzername.add(mItem2);
         menuBar.add(menu);
+        menuBar.add(Box.createRigidArea(new Dimension(0,30)));
         menuBar.add(Box.createHorizontalGlue()); 
         menuBar.add(lBetrag);
         menuBar.add(mBenutzername);
@@ -193,7 +194,6 @@ public class Spielbrett extends JFrame implements View{
         menuBar.setBorder(BorderFactory.createMatteBorder(1, 0, 1, 0, Color.gray));
         benutzernameAnzeigen();
         betragAnzeigen();
-        
         this.setJMenuBar(menuBar);
     }
     public void setControllerView(){
