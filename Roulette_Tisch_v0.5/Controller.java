@@ -93,7 +93,32 @@ public class Controller implements ActionListener{
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){
-            ((Spielbrett)view).Coinsetzen2();
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=799;
+            int v=529;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
         }
     }
 }
