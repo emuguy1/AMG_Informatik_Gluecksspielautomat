@@ -9,7 +9,10 @@ import java.io.File;
 import java.awt.*;
 import javax.imageio.*;
 import javax.swing.JOptionPane;
-public class Spielbrett extends JFrame implements View{
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Spielbrett extends JFrame implements View, ActionListener{
     /**
      * The WIDTH of the JFrame:
      */
@@ -78,7 +81,12 @@ public class Spielbrett extends JFrame implements View{
     private Bild bild;
     //SPIELEN BUTTON
     private JButton bSpielen = new JButton();
-    
+    //KUGEL POSITION
+    private double grad = 270;
+    private double increase = 0.5;
+    private double decay = 0.0001;
+    private Bild kugel;
+    private Timer timer;
     //MENÜBAR
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem mItem1 = new JMenuItem("Einstellungen");
@@ -171,13 +179,13 @@ public class Spielbrett extends JFrame implements View{
                     }
                 }
             });
-
-        
-        
         add(bSpielen);
-        //Coinsetzen();
+        //MENÜ
         setUpMenu();
-        
+        //ROULETTERAD
+        kugelBild();
+        rouletterad();
+        //kugelanimation();
         this.setVisible(true);
     }
     public void setUpMenu(){
@@ -199,6 +207,50 @@ public class Spielbrett extends JFrame implements View{
         benutzernameAnzeigen();
         betragAnzeigen();
         this.setJMenuBar(menuBar);
+        
+    }
+    public void rouletterad(){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/roulettescheibe.jpg"));
+
+            bild = new Bild(image); 
+            bild.setBounds(460,12,347,274);
+            add(bild);
+            this.repaint();
+        }
+        catch(Exception e){
+            System.out.println("Rouletteradfehler"+e);
+        }
+    }
+    public void kugelanimation(){
+       timer = new Timer(5, this);
+       timer.start(); 
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {//633 149
+        kugel((int)(Math.cos(Math.toRadians(grad))*100)+630,(int)(Math.sin(Math.toRadians(grad))*98)+149);
+        grad += increase;
+        increase -= decay;
+        if(increase <= 0.0){
+            timer.stop();
+        }
+    }
+    public void kugel(int x, int y){
+        kugel.setBounds(x,y,16,16);
+        this.repaint();
+    }
+    public void kugelBild(){
+        try{
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kugel.png"));
+            
+            kugel = new Bild(image); 
+            kugel.setBounds(630,51,16,16);
+            add(kugel);
+            this.repaint(); 
+        }
+        catch(Exception e){
+            System.out.println("Kugelfehler"+e);
+        }
     }
     public void setControllerView(){
         controller.setView(this);
