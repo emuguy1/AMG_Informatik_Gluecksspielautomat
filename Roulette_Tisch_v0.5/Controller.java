@@ -56,6 +56,15 @@ public class Controller implements ActionListener{
             model.setView(view);
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
             int i=799;
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
@@ -73,7 +82,6 @@ public class Controller implements ActionListener{
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
             }
-            ((Spielbrett)view).Coinsetzen();
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){
             ((Spielbrett)view).Coinsetzen2();

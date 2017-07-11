@@ -86,7 +86,7 @@ public class Spielbrett extends JFrame implements View{
     private JLabel lBetrag = new JLabel("Betrag: ");
     private JMenu mBenutzername= new JMenu();
     private JMenu menu = new JMenu("Menü");
-    private int wert=0;;
+    private Bild aktuellerCoin=null;
     public Spielbrett(Controller c, Model m){
         controller = new Controller(m);
         model = m;
@@ -235,60 +235,65 @@ public class Spielbrett extends JFrame implements View{
     
     public void roterCoinSetzen(int i, int v){
        try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/schwarzerCoin.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
+            aktuellerCoin=bild;
         }
         catch(Exception e){
         } 
     }
     public void grünerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinergrünerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
+            aktuellerCoin=bild;
         }
         catch(Exception e){
         }
     }
     public void weißerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerweißerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
+            aktuellerCoin=bild;
         }
         catch(Exception e){
         }
     }
     public void blauerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerblauerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
+            aktuellerCoin=bild;
         }
         catch(Exception e){
         }
     }
     public void schwarzerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/´schwarzerCoin1.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerschwarzerCoin.png"));
 
             bild = new Bild(image); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
+            aktuellerCoin=bild;
         }
         catch(Exception e){
         }
@@ -697,10 +702,11 @@ public class Spielbrett extends JFrame implements View{
     public JMenuItem getMItem2(){
         return mItem2;
     }
-    public void wertSetzen(){
-        wert=comboBox.wertGeben();
-    }
+   
     public int wertGeben(){
-        return wert;
+        return comboBox.wertGeben();
+    }
+    public Bild getAktuellerCoin(){
+        return aktuellerCoin;
     }
 }
