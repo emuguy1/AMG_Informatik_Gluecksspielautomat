@@ -1072,6 +1072,370 @@ public class Controller implements ActionListener{
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
             }
         }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB37()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=375;
+            int v=481;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB38()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=375;
+            int v=529;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB39()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=375;
+            int v=577;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB40()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=414;
+            int v=442;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB41()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=568;
+            int v=442;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB42()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=722;
+            int v=442;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB43()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=414;
+            int v=396;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB44()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=492;
+            int v=396;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB45()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=568;
+            int v=396;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB46()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=644;
+            int v=396;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB47()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=722;
+            int v=396;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB48()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=800;
+            int v=396;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB49()){
+            try{
+                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                }
+            }
+            catch(Exception p){
+                System.out.println("Andreas Mandl!");
+            }
+            
+            int i=880;
+            int v=481;
+            if(((Spielbrett)view).wertGeben()==1){
+                ((Spielbrett)view).weißerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==10){
+                ((Spielbrett)view).roterCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==50){
+                ((Spielbrett)view).blauerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==100){
+                ((Spielbrett)view).grünerCoinSetzen(i,v);
+            }
+            else if(((Spielbrett)view).wertGeben()==500){
+                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+            }
+        }
     }
 }
 
