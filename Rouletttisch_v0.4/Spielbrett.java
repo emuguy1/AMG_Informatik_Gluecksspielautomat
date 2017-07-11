@@ -74,7 +74,6 @@ public class Spielbrett extends JFrame implements View{
     //BILD
     private Bild bild;
 
-    private int wert=0;
     //Controller:
     private JMenuBar menuBar = new JMenuBar();;
 
@@ -682,10 +681,7 @@ public class Spielbrett extends JFrame implements View{
     public JMenuItem getMItem2(){
         return mItem2;
     }
-    public void wertSetzen(){
-        wert=comboBox.wertGeben();
-    }
     public int wertGeben(){
-        return wert;
+        return comboBox.wertGeben();
     }
  }
