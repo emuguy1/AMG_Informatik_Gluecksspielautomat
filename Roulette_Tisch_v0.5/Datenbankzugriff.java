@@ -205,7 +205,7 @@ public class Datenbankzugriff{
   
   
   public boolean anmelden(String Name, String wort){
-   String s="SELECT Benutzername FROM Spielerliste WHERE (Benutzername='"+Name+"' AND Passwort='"+wort+"')  ;";
+    String s="SELECT Benutzername FROM Spielerliste WHERE (Benutzername='"+Name+"' AND Passwort='"+wort+"')  ;";
     String vergleichswert=datenbankzugriffTestenString(s,1);
     if(vergleichswert==null){
       return false;
@@ -213,7 +213,14 @@ public class Datenbankzugriff{
     else{
       return true;
     }
+    
   }
+  public String betragGeben(String benutzername){
+    String s="SELECT Betrag FROM Spielerliste WHERE Benutzername ='"+benutzername+"'";
+    return datenbankzugriffTestenString(s,1);
+    
+  }
+ 
   /*
   BetragGeben
   Gewinngeben

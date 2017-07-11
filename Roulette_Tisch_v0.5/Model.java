@@ -6,4 +6,5 @@ public interface Model
     void setView(View v);
     String getBetrag();
     String getBenutzername();
+    void spielen();
 }
