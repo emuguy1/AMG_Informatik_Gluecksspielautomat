@@ -82,7 +82,8 @@ public class Spielbrett extends JFrame implements View{
     //MENÜBAR
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem mItem1 = new JMenuItem("Einstellungen");
-    private JMenuItem mItem2 = new JMenuItem("Abmelden"); 
+    private JMenuItem mItem2 = new JMenuItem("Abmelden");
+    private JMenuItem mItem3 = new JMenuItem("Hilfe");
     private JLabel lBetrag = new JLabel("Betrag: ");
     private JMenu mBenutzername= new JMenu();
     private JMenu menu = new JMenu("Menü");
@@ -157,6 +158,7 @@ public class Spielbrett extends JFrame implements View{
         //addB2();
         addFieldButtons();
         //SPIELEN BUTTON BILD SETZEN
+        bSpielen.addActionListener(controller);
         bSpielen.setIcon(new ImageIcon(System.getProperty("user.dir")+"/spielen.png"));
         bSpielen.setBounds(505,300,258,85); 
         bSpielen.getModel().addChangeListener(new ChangeListener() {
@@ -182,8 +184,10 @@ public class Spielbrett extends JFrame implements View{
         //ACTIONLISTENER
         mItem1.addActionListener(controller);
         mItem2.addActionListener(controller);
+        mItem3.addActionListener(controller);
         //SET UP THE MENU 
         menu.add(mItem1);
+        menu.add(mItem3);
         mBenutzername.add(mItem2);
         menuBar.add(menu);
         menuBar.add(Box.createRigidArea(new Dimension(0,30)));
@@ -702,7 +706,12 @@ public class Spielbrett extends JFrame implements View{
     public JMenuItem getMItem2(){
         return mItem2;
     }
-   
+    public JMenuItem getMItem3(){
+        return mItem3;
+    }
+    public JButton getSpielenButton(){
+        return bSpielen;
+    }
     public int wertGeben(){
         return comboBox.wertGeben();
     }

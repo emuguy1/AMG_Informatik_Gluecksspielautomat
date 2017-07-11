@@ -1,7 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 public class Controller implements ActionListener{
     public View view;
@@ -48,12 +48,21 @@ public class Controller implements ActionListener{
         //Spielbrettbetrieb
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem1()){
             //EINSTELLUNGEN
+            
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem3()){
+            //HILFE
+            JOptionPane.showMessageDialog((Spielbrett)view, "There are 10 types of people in the world: those who understand binary, those who don't \n and those who didn't expect this to be a base three joke.","Hilfe",JOptionPane.INFORMATION_MESSAGE);
+            
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem2()){
             //ABMELDEN
             view.dispose();
             view = new Login(this);
             model.setView(view);
+        }else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
+            //SPIELEN
+            model.spielen();
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
             try{

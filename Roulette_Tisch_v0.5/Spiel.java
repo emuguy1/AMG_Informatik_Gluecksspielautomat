@@ -1,6 +1,7 @@
 
 public class Spiel implements Model{
   private Datenbankzugriff db = new Datenbankzugriff();
+  private String benutzer;
   public Spiel()  {  
     //Objektvariablen initialisieren  
   }
@@ -8,15 +9,21 @@ public class Spiel implements Model{
     
   }
   public boolean anmelden(String benutzername, String passwort){
+    benutzer = benutzername;
     return db.anmelden(benutzername , passwort);
   }
   public boolean registrieren(String benutzername, String passwort){
+    benutzer = benutzername;
     return db.registrieren(benutzername , passwort);
   }
   public String getBetrag(){
-      return "0";
+      return db.betragGeben(benutzer);
   }
   public String getBenutzername(){
-      return "Hydrargyros";
+      return benutzer;
   }
+  public void spielen(){
+    System.out.println((int) (Math.random()*37));
+  }
+  
 } // Ende der Klasse Spiel
