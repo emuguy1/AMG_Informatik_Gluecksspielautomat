@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=b
+comment0.target=Bild(java.awt.image.BufferedImage)
+comment1.params=g
+comment1.target=void\ paintComponent(java.awt.Graphics)
+numComments=2
