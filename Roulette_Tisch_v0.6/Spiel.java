@@ -23,56 +23,57 @@ public class Spiel implements Model{
       return benutzer;
   }
   public void spielen(){
-    System.out.println((int) (Math.random()*37));
+    Integer gewinnzahl = (int) (Math.random()*37);
+    System.out.println(gewinnzahl);
+    System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,50,"13"));
   }
-  public int zufallszahlGenerieren(){
-      return (int) (Math.random()*37); 
-  }
-  public int zahlVergleichen(int zahl,int gesetzterBertrag){
-      if(zufallszahlGenerieren() == zahl){
+  
+  public int zahlVergleichen(Integer zahl,int gesetzterBertrag, String zahlGesetzt){
+      if(zahlGesetzt.equals(zahl.toString())){
           int ergebnis =gesetzterBertrag * 37;
           return ergebnis;
         }
-      else if(istGerade(zahl)== true && istGerade(zufallszahlGenerieren()) == true ){
+      else if(istGerade(zahl)== true && zahlGesetzt.equals("gerade")){
           int ergebnis =gesetzterBertrag * 2;
           return ergebnis;
       }
-      else if(istGerade(zahl)== false && istGerade(zufallszahlGenerieren()) == false ){
+      else if(istGerade(zahl)== false && zahlGesetzt.equals("ungerade")){
           int ergebnis =gesetzterBertrag * 2;
           return ergebnis;
       }
-      else if(isterstesdrittel(zahl)== true && isterstesdrittel(zufallszahlGenerieren()) == true ){
+      else if(isterstesdrittel(zahl)== true && zahlGesetzt.equals("erstesdrittel")){
           int ergebnis =gesetzterBertrag * 3;
           return ergebnis;
       }
-      else if(istzweitesdrittel(zahl)== true && istzweitesdrittel(zufallszahlGenerieren()) == true ){
+      else if(istzweitesdrittel(zahl)== true && zahlGesetzt.equals("zweitesdrittel") ){
           int ergebnis =gesetzterBertrag * 3;
           return ergebnis;
       }
-      else if(istdrittesdrittel(zahl)== true && istdrittesdrittel(zufallszahlGenerieren()) == true ){
+      else if(istdrittesdrittel(zahl)== true && zahlGesetzt.equals("drittesdrittel") ){
           int ergebnis =gesetzterBertrag * 3;
           return ergebnis;
       }
-      else if(isterstereihe(zahl)== true && isterstereihe(zufallszahlGenerieren()) == true ){
+      else if(isterstereihe(zahl)== true && zahlGesetzt.equals("erstereihe")){
           int ergebnis =gesetzterBertrag * 3;
           return ergebnis;
       }
-      else if(istzweitereihe(zahl)== true && istzweitereihe(zufallszahlGenerieren()) == true ){
+      else if(istzweitereihe(zahl)== true && zahlGesetzt.equals("zweitereihe")){
           int ergebnis =gesetzterBertrag * 3;
           return ergebnis;
       }
-      else if(istrot(zahl)== true && istrot(zufallszahlGenerieren()) == true ){
+      else if(istrot(zahl)== true && zahlGesetzt.equals("rot")){
           int ergebnis =gesetzterBertrag * 2;
           return ergebnis;
       }
-      else if(istschwarz(zahl)== true && istschwarz(zufallszahlGenerieren()) == true ){
+      else if(istschwarz(zahl)== true && zahlGesetzt.equals("schwarz")){
           int ergebnis =gesetzterBertrag * 2;
           return ergebnis;
       }
-      else if(zahl == 0 && zufallszahlGenerieren() ==  0 ){
+      /*
+      else if(zahl == 0 && zahlGesetzt ==  0 ){
           int ergebnis =gesetzterBertrag * 2;
           return ergebnis;
-      }
+      }*/
       else{
           return 0;
         }

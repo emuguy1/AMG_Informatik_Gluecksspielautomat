@@ -7,7 +7,7 @@ public interface Model
     String getBetrag();
     String getBenutzername();
     void spielen();
-    int zufallszahlGenerieren();
+    
     boolean istGerade(int zahl);
     boolean isterstesdrittel(int zahl);
     boolean istzweitereihe(int zahl);

@@ -86,7 +86,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private double increase = 0.5;
     private double decay = 0.0001;
     private Bild kugel;
-    private Timer timer;
+    private Timer timer = new Timer(5, this);
     //MENÜBAR
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem mItem1 = new JMenuItem("Einstellungen");
@@ -223,7 +223,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         }
     }
     public void kugelanimation(){
-       timer = new Timer(5, this);
+       
        timer.start(); 
     }
     @Override
