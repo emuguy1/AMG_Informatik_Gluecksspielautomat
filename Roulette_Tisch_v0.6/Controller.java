@@ -79,18 +79,23 @@ public class Controller implements ActionListener{
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("1",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("1",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("1",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("1",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("1",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB2()){
@@ -107,18 +112,23 @@ public class Controller implements ActionListener{
             int v=529;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("2",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("2",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("2",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("2",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("2",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB3()){
@@ -135,18 +145,23 @@ public class Controller implements ActionListener{
             int v=577;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("3",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("3",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("3",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("3",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("3",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
@@ -163,18 +178,23 @@ public class Controller implements ActionListener{
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("4",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("4",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("4",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("4",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("4",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){
@@ -191,18 +211,23 @@ public class Controller implements ActionListener{
             int v=529;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("5",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("5",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("5",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("5",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("5",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB6()){
@@ -219,18 +244,23 @@ public class Controller implements ActionListener{
             int v=577;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("6",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("6",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("6",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("6",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("6",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB7()){
@@ -247,18 +277,23 @@ public class Controller implements ActionListener{
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("7",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("7",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("7",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("7",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("7",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB8()){
@@ -275,18 +310,23 @@ public class Controller implements ActionListener{
             int v=529;
             if(((Spielbrett)view).wertGeben()==1){
                 ((Spielbrett)view).weißerCoinSetzen(i,v);
+                model.einsatzSetzen("8",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
                 ((Spielbrett)view).roterCoinSetzen(i,v);
+                model.einsatzSetzen("8",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
                 ((Spielbrett)view).blauerCoinSetzen(i,v);
+                model.einsatzSetzen("8",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
                 ((Spielbrett)view).grünerCoinSetzen(i,v);
+                model.einsatzSetzen("8",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
                 ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                model.einsatzSetzen("8",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB9()){

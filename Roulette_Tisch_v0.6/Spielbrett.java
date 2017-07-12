@@ -233,6 +233,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         increase -= decay;
         if(increase <= 0.0){
             timer.stop();
+            timer = new Timer(5,this);
+            increase = 0.5;
+            grad = 270;
         }
     }
     public void kugel(int x, int y){
