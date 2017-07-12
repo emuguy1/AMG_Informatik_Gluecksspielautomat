@@ -211,10 +211,10 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     }
     public void rouletterad(){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/roulettescheibe.jpg"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/roulettescheibe.png"));
 
             bild = new Bild(image); 
-            bild.setBounds(460,12,347,274);
+            bild.setBounds(500,12,347,274);
             add(bild);
             this.repaint();
         }
@@ -228,7 +228,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {//633 149
-        kugel((int)(Math.cos(Math.toRadians(grad))*100)+630,(int)(Math.sin(Math.toRadians(grad))*98)+149);
+        kugel((int)(Math.cos(Math.toRadians(grad))*100)+630,(int)(Math.sin(Math.toRadians(grad))*98)+140);
         grad += increase;
         increase -= decay;
         if(increase <= 0.0){
