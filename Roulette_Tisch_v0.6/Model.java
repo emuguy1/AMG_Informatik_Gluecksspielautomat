@@ -6,7 +6,7 @@ public interface Model
     void setView(View v);
     String getBetrag();
     String getBenutzername();
-    int spielen();
+    int[] spielen();
     void einsatzSetzen(String s, Integer i);
     
 }

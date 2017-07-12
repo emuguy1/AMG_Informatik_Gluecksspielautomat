@@ -81,6 +81,8 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private Bild bild;
     //SPIELEN BUTTON
     private JButton bSpielen = new JButton();
+    private int gewinnzahl;
+    private int gewinn;
     //KUGEL POSITION
     private double grad = 270;
     private double increase = 1;
@@ -222,7 +224,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             System.out.println("Rouletteradfehler"+e);
         }
     }
-    public void kugelanimation(int zahl){
+    public void kugelanimation(int zahl, int gewinn){
+        gewinnzahl = zahl;
+        this.gewinn = gewinn;
         switch(zahl){
             case 0:{//26: 0.000229 3: 0.000225
                 decay -= 0.000093;
@@ -274,7 +278,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             }
         }
        
-       timer.start(); 
+        timer.start(); 
     }
     @Override
     public void actionPerformed(ActionEvent e) {//633 149
@@ -286,7 +290,8 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             timer = new Timer(5,this);
             increase = 0.5;
             grad = 270;
-            decay = 0.001006;
+            decay = 0.000697;
+            ergebnisAnzeigen(gewinnzahl, gewinn);
         }
     }
     public void kugel(int x, int y){
@@ -298,13 +303,16 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kugel.png"));
             
             kugel = new Bild(image); 
-            kugel.setBounds(630,51,16,16);
+            kugel.setBounds(629,141-100,16,16);
             add(kugel);
             this.repaint(); 
         }
         catch(Exception e){
             System.out.println("Kugelfehler"+e);
         }
+    }
+    public void ergebnisAnzeigen(int zahl, int gewinn){
+        JOptionPane.showMessageDialog(this, "Zahl: "+zahl+"\nGewinn: "+gewinn);
     }
     public void setControllerView(){
         controller.setView(this);

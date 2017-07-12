@@ -24,14 +24,16 @@ public class Spiel implements Model{
   public String getBenutzername(){
       return benutzer;
   }
-  public int spielen(){
+  public int[] spielen(){
     Integer gewinnzahl = (int) (Math.random()*37);
     System.out.println(gewinnzahl);
-    
+    int gewinn = 0;
     for(int i = 0; i<einsatz.size();i++){
         System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i)));
+        gewinn += zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i));
     }
-    return gewinnzahl;
+    int[] erg = {gewinnzahl,gewinn};
+    return erg;
   }
   public void einsatzSetzen(String s, Integer i){
     einsatz.add(s);
