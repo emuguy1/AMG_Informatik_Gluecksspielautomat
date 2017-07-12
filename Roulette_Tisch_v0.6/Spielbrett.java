@@ -83,8 +83,8 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private JButton bSpielen = new JButton();
     //KUGEL POSITION
     private double grad = 270;
-    private double increase = 0.5;
-    private double decay = 0.0001;
+    private double increase = 1;
+    private double decay = 0.00101;
     private Bild kugel;
     private Timer timer = new Timer(5, this);
     //MENÜBAR

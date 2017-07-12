@@ -59,6 +59,7 @@ public class Controller implements ActionListener{
             //ABMELDEN
             view.dispose();
             view = new Login(this);
+            model = new Spiel();
             model.setView(view);
         }else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
             //SPIELEN
