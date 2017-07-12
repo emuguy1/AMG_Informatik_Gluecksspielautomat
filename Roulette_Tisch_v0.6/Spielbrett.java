@@ -84,7 +84,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     //KUGEL POSITION
     private double grad = 270;
     private double increase = 1;
-    private double decay = 0.00101;
+    private double decay = 0.000697;//0.000697->0 -0.000010 = +1
     private Bild kugel;
     private Timer timer = new Timer(5, this);
     //MENÜBAR
@@ -222,13 +222,63 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             System.out.println("Rouletteradfehler"+e);
         }
     }
-    public void kugelanimation(){
+    public void kugelanimation(int zahl){
+        switch(zahl){
+            case 0:{//26: 0.000229 3: 0.000225
+                decay -= 0.000093;
+                break;
+            }
+            case 32:{
+                decay -= 0.000010;
+                break;
+            }
+            case 15:{
+                decay -= 0.000020;
+                break;
+            }
+            case 19:{
+                decay -= 0.000029;
+                break;
+            }
+            case 4:{
+                decay -= 0.000038;
+                break;
+            }
+            case 21:{
+                decay -= 0.000046;
+                break;
+            }
+            case 2:{
+                decay -= 0.000054;
+                break;
+            }
+            case 25:{
+                decay -= 0.000062;
+                break;
+            }
+            case 17:{
+                decay -= 0.000070;
+                break;
+            }
+            case 34:{
+                decay -= 0.000078;
+                break;
+            }
+            case 6:{
+                decay -= 0.000086;
+                break;
+            }
+            case 27:{
+                decay -= 0.000093;
+                break;
+            }
+        }
        
        timer.start(); 
     }
     @Override
     public void actionPerformed(ActionEvent e) {//633 149
-        kugel((int)(Math.cos(Math.toRadians(grad))*100)+630,(int)(Math.sin(Math.toRadians(grad))*98)+140);
+        kugel((int)(Math.cos(Math.toRadians(grad))*100)+630,(int)(Math.sin(Math.toRadians(grad))*100)+141);
         grad += increase;
         increase -= decay;
         if(increase <= 0.0){
@@ -236,6 +286,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             timer = new Timer(5,this);
             increase = 0.5;
             grad = 270;
+            decay = 0.001006;
         }
     }
     public void kugel(int x, int y){

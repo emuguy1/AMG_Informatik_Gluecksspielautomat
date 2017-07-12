@@ -63,8 +63,8 @@ public class Controller implements ActionListener{
             model.setView(view);
         }else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
             //SPIELEN
-            model.spielen();
-            ((Spielbrett)view).kugelanimation();
+            
+            ((Spielbrett)view).kugelanimation(/*model.spielen()*/0);
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB1()){
             try{
