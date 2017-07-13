@@ -1,7 +1,9 @@
-
+import java.util.ArrayList;
 public class Spiel implements Model{
   private Datenbankzugriff db = new Datenbankzugriff();
   private String benutzer;
+  private ArrayList<String> einsatz = new ArrayList<String>();
+  private ArrayList<Integer> einsatzBetrag = new ArrayList<Integer>();
   public Spiel()  {  
     //Objektvariablen initialisieren  
   }
@@ -22,13 +24,22 @@ public class Spiel implements Model{
   public String getBenutzername(){
       return benutzer;
   }
-  public void spielen(){
+  public int[] spielen(){
     Integer gewinnzahl = (int) (Math.random()*37);
     System.out.println(gewinnzahl);
-    System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,50,"13"));
+    int gewinn = 0;
+    for(int i = 0; i<einsatz.size();i++){
+        System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i)));
+        gewinn += zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i));
+    }
+    int[] erg = {gewinnzahl,gewinn};
+    return erg;
   }
-  
-  public int zahlVergleichen(Integer zahl,int gesetzterBertrag, String zahlGesetzt){
+  public void einsatzSetzen(String s, Integer i){
+    einsatz.add(s);
+    einsatzBetrag.add(i);
+  }
+  private int zahlVergleichen(Integer zahl,int gesetzterBertrag, String zahlGesetzt){
       if(zahlGesetzt.equals(zahl.toString())){
           int ergebnis =gesetzterBertrag * 37;
           return ergebnis;
@@ -78,7 +89,7 @@ public class Spiel implements Model{
           return 0;
         }
   }
-  public boolean istGerade(int zahl){
+  private boolean istGerade(int zahl){
       int testInt = zahl;
 
       if (testInt%2 == 0) {
@@ -88,7 +99,7 @@ public class Spiel implements Model{
             return false;// ungerade
     }
    }
-  public boolean isterstesdrittel(int zahl){
+  private boolean isterstesdrittel(int zahl){
       if(zahl == 1){
           return true;
         }
@@ -129,7 +140,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istzweitesdrittel(int zahl){
+  private boolean istzweitesdrittel(int zahl){
       if(zahl == 13){
           return true;
         }
@@ -170,7 +181,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istdrittesdrittel(int zahl){
+  private boolean istdrittesdrittel(int zahl){
       if(zahl == 25){
           return true;
         }
@@ -211,7 +222,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istdrittereihe(int zahl){
+  private boolean istdrittereihe(int zahl){
       if(zahl == 3){
           return true;
         }
@@ -252,7 +263,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istzweitereihe(int zahl){
+  private boolean istzweitereihe(int zahl){
       if(zahl == 2){
           return true;
         }
@@ -293,7 +304,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean isterstereihe(int zahl){
+  private boolean isterstereihe(int zahl){
       if(zahl == 1){
           return true;
         }
@@ -334,7 +345,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean isterstehaelfte(int zahl){
+  private boolean isterstehaelfte(int zahl){
       if(zahl == 1){
           return true;
         }
@@ -393,7 +404,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istzweitehaelfte(int zahl){
+  private boolean istzweitehaelfte(int zahl){
       if(zahl == 19){
           return true;
         }
@@ -452,7 +463,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istrot(int zahl){
+  private boolean istrot(int zahl){
       if(zahl == 2){
           return true;
         }
@@ -511,7 +522,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public boolean istschwarz(int zahl){
+  private boolean istschwarz(int zahl){
       if(zahl == 1){
           return true;
         }
