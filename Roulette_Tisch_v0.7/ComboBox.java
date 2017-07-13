@@ -48,31 +48,31 @@ public class ComboBox extends JPanel
        if(name.equals("1")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´weißerCoin1.png");
             picture.setIcon(icon);
-            picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(1);
         }
         else if(name.equals("10")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´roterCoin1.png");
             picture.setIcon(icon);
-            picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(10);
         }
         else if(name.equals("50")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´blauerCoin1.png");
             picture.setIcon(icon);
-            picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(50);
         }
         else if(name.equals("100")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´grünerCoin1.png");
             picture.setIcon(icon);
-            picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(100);
         }
         else if(name.equals("500")){
             ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´schwarzerCoin1.png");
             picture.setIcon(icon);
-            picture.setToolTipText("A drawing of a " + name.toLowerCase());
+            picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(500);
         }
         else{
