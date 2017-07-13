@@ -109,7 +109,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         setLayout(null);
         setResizable(false);
         //Hintergrundblid setzen
-        setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/roulette.jpg")));
+        setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/roulette2.jpg")));
         //adding the ActionListener
         b1.addActionListener(controller);
         b2.addActionListener(controller);
