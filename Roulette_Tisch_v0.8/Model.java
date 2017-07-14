@@ -8,5 +8,5 @@ public interface Model
     String getBenutzername();
     int[] spielen();
     void einsatzSetzen(String s, Integer i);
-    
+    boolean ausreichendGeld();
 }

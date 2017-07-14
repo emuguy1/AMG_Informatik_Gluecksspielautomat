@@ -14,4 +14,6 @@ comment6.params=
 comment6.target=int[]\ spielen()
 comment7.params=s\ i
 comment7.target=void\ einsatzSetzen(java.lang.String,\ java.lang.Integer)
-numComments=8
+comment8.params=
+comment8.target=boolean\ ausreichendGeld()
+numComments=9

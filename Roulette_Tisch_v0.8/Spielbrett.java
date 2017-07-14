@@ -75,6 +75,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private JButton b47 = new JButton();//gerade
     private JButton b48 = new JButton();//1-18
     private JButton b49 = new JButton();//0
+    private Bild[] gesetzteCoins = new Bild[49];
     //AUSWAHLFELD FÜR COINS
     private ComboBox comboBox = new ComboBox();
     //BILD
@@ -89,6 +90,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private double decay = 0.000697;//0.000697->0 -0.000010 = +1
     private Bild kugel;
     private Timer timer = new Timer(5, this);
+    private boolean ready = true;
     //MENÜBAR
     private JMenuBar menuBar = new JMenuBar();
     private JMenuItem mItem1 = new JMenuItem("Einstellungen");
@@ -190,6 +192,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         //kugelanimation();
         this.setVisible(true);
     }
+    public void coinSetzen(int index, Bild b){
+        gesetzteCoins[index] = b;
+    }
+    public Bild getGesetzterCoin(int index){
+        return gesetzteCoins[index];
+    }
     public void setUpMenu(){
         //ACTIONLISTENER
         mItem1.addActionListener(controller);
@@ -225,6 +233,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         }
     }
     public void kugelanimation(int zahl, int gewinn){
+        ready = false;
         gewinnzahl = zahl;
         this.gewinn = gewinn;
         switch(zahl){
@@ -393,6 +402,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             decay = 0.000697;
             ergebnisAnzeigen(gewinnzahl, gewinn);
             betragAnzeigen();
+            ready = true;
         }
     }
     public void kugel(int x, int y){
@@ -426,33 +436,8 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         String d = model.getBetrag();
         lBetrag.setText("Betrag: "+d+"  ");
     }
-    public void Coinsetzen(){
-        try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
-
-            bild = new Bild(image); 
-            bild.setBounds(600,400,100,100);
-            add(bild);
-            this.repaint();
-        }
-        catch(Exception e){
-            
-        }
-    }
-    public void Coinsetzen2(){
-        try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/schwarzerCoin.png"));
-
-            bild = new Bild(image); 
-            bild.setBounds(600,400,100,100);
-            add(bild);
-            this.repaint();
-        }
-        catch(Exception e){
-        }
-    }
     
-    public void roterCoinSetzen(int i, int v){
+    public Bild roterCoinSetzen(int i, int v){
        try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
 
@@ -460,12 +445,13 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-            aktuellerCoin=bild;
+            return bild;
         }
         catch(Exception e){
+            return null;
         } 
     }
-    public void grünerCoinSetzen(int i, int v){
+    public Bild grünerCoinSetzen(int i, int v){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinergrünerCoin.png"));
 
@@ -473,12 +459,13 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-            aktuellerCoin=bild;
+             return bild;
         }
         catch(Exception e){
-        }
+            return null;
+        } 
     }
-    public void weißerCoinSetzen(int i, int v){
+    public Bild weißerCoinSetzen(int i, int v){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerweißerCoin.png"));
 
@@ -486,12 +473,13 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-            aktuellerCoin=bild;
+             return bild;
         }
         catch(Exception e){
-        }
+            return null;
+        } 
     }
-    public void blauerCoinSetzen(int i, int v){
+    public Bild blauerCoinSetzen(int i, int v){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerblauerCoin.png"));
 
@@ -499,12 +487,13 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-            aktuellerCoin=bild;
+             return bild;
         }
         catch(Exception e){
-        }
+            return null;
+        } 
     }
-    public void schwarzerCoinSetzen(int i, int v){
+    public Bild schwarzerCoinSetzen(int i, int v){
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerschwarzerCoin.png"));
 
@@ -512,10 +501,11 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-            aktuellerCoin=bild;
+             return bild;
         }
         catch(Exception e){
-        }
+            return null;
+        } 
     }
     public JButton getB1(){
         return b1;
@@ -927,10 +917,19 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     public JButton getSpielenButton(){
         return bSpielen;
     }
+    /**
+     * @return the value of the selected coin
+     */
     public int wertGeben(){
         return comboBox.wertGeben();
     }
     public Bild getAktuellerCoin(){
         return aktuellerCoin;
+    }
+    /**
+     * @return true if the animation is finished
+     */
+    public boolean ready(){
+        return ready;
     }
 }

@@ -7,24 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Datenbankzugriff{
-  
-  public void TestdatensatzEinfuegen(){
-    String sql = "INSERT INTO Spielerliste(ID,Benutzername,Passwort,VerlaufNr,Betrag,Gewinn) VALUES(?,?,?,?,?,?)";
- 
-    try{
-      datensatzEinfuegen(sql,1,"emuguy","123emuguy",1,200,50);
-    }
-    catch(SQLException e){
-      System.out.println("Fehler beim Datensatz erstellen: "+e);
-    }
-  }
-  
+    
   public void sqlAbfrage(){
     String s="SELECT Benutzername FROM Spielerliste WHERE ID='2'";
-    datenbankzugriffTestenString(s,1);
+    datenbankzugriffString(s,1);
   }
-  
-  private void datensatzEinfuegen(String sqlAbfrage, int ID, String Benutzername, String Passwort, int VerlaufNr, double Betrag, double Gewinn ) throws SQLException{
+  private void datensatzEinfuegen(String sqlAbfrage, int ID, String Benutzername, String Passwort, int VerlaufNr, int Betrag, double Gewinn ) throws SQLException{
     Connection dbVerbindung = null;
     Statement sqlStatement = null;
     String sqlString = sqlAbfrage;
@@ -64,7 +52,7 @@ public class Datenbankzugriff{
   }
 
   
-  public String datenbankzugriffTestenString(String sqlAbfrage, int x){
+  public String datenbankzugriffString(String sqlAbfrage, int x){
     Connection dbVerbindung = null;
     Statement sqlStatement = null;
     String sqlString =sqlAbfrage;
@@ -114,7 +102,7 @@ public class Datenbankzugriff{
     }
     return null;
   }
-  public int datenbankzugriffTestenint(String sqlAbfrage, int x){
+  public int datenbankzugriffInt(String sqlAbfrage, int x){
     Connection dbVerbindung = null;
     Statement sqlStatement = null;
     String sqlString =sqlAbfrage;
@@ -187,7 +175,7 @@ public class Datenbankzugriff{
   public boolean datensatzVergleichen(String Name){
     //for(int i=0;<=i;i++){
     String s="SELECT Benutzername FROM Spielerliste WHERE Benutzername='"+Name+"';";
-    String vergleichswert=datenbankzugriffTestenString(s,1);
+    String vergleichswert=datenbankzugriffString(s,1);
     if(vergleichswert==null){
       return true;
     }
@@ -199,14 +187,14 @@ public class Datenbankzugriff{
   
   public int IDkreieren(){
     String s="SELECT MAX(ID) FROM Spielerliste";
-    int maxID=datenbankzugriffTestenint(s,1);
+    int maxID=datenbankzugriffInt(s,1);
     return maxID+1;
   }
   
   
   public boolean anmelden(String Name, String wort){
     String s="SELECT Benutzername FROM Spielerliste WHERE (Benutzername='"+Name+"' AND Passwort='"+wort+"')  ;";
-    String vergleichswert=datenbankzugriffTestenString(s,1);
+    String vergleichswert=datenbankzugriffString(s,1);
     if(vergleichswert==null){
       return false;
     }
@@ -217,11 +205,11 @@ public class Datenbankzugriff{
   }
   public String betragGeben(String benutzername){
     String s="SELECT Betrag FROM Spielerliste WHERE Benutzername ='"+benutzername+"'";
-    return datenbankzugriffTestenString(s,1);
+    return datenbankzugriffString(s,1);
     
   }
   
-  public void GewinnHinzufuegen(String Name,int Gewinn)throws SQLException{
+  public void gewinnHinzufuegen(String Name,int Gewinn)throws SQLException{
     
     String s="UPDATE Spielerliste SET Betrag=Betrag+'"+Gewinn+"',Gewinn='"+Gewinn+"' WHERE Benutzername='"+Name+"';";
     try{
@@ -266,10 +254,7 @@ public class Datenbankzugriff{
     }
   }
   
-  public boolean AnfangsMethode(){ //Wenn die Tabelle noch KEINEN datensatz hat!!!
-      TestdatensatzEinfuegen();
-      return true;
-  }
+ 
   /*
   BetragGeben
   Gewinngeben

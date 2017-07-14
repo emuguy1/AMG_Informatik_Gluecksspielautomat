@@ -4,8 +4,8 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 public class Controller implements ActionListener{
-    public View view;
-    public Model model;
+    private View view;
+    private Model model;
     public Controller(Model m){
      model = m;   
     }
@@ -63,56 +63,48 @@ public class Controller implements ActionListener{
             model.setView(view);
         }else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
             //SPIELEN
-            int[] i = model.spielen();
-            ((Spielbrett)view).kugelanimation(i[0],i[1]);
+            if(((Spielbrett)view).ready()&& model.ausreichendGeld()){
+                int[] i = model.spielen();
+                ((Spielbrett)view).kugelanimation(i[0],i[1]);
+            }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB1()){
-            try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
-                }
-            }
-            catch(Exception p){
-                System.out.println("Andreas Mandl!");
+            if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(1));
             }
             
             int i=839;
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(1,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("1",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
-                ((Spielbrett)view).roterCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(1,((Spielbrett)view).roterCoinSetzen(i,v));
                 model.einsatzSetzen("1",10);
             }
             else if(((Spielbrett)view).wertGeben()==50){
-                ((Spielbrett)view).blauerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(1,((Spielbrett)view).blauerCoinSetzen(i,v));
                 model.einsatzSetzen("1",50);
             }
             else if(((Spielbrett)view).wertGeben()==100){
-                ((Spielbrett)view).grünerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(1,((Spielbrett)view).grünerCoinSetzen(i,v));
                 model.einsatzSetzen("1",100);
             }
             else if(((Spielbrett)view).wertGeben()==500){
-                ((Spielbrett)view).schwarzerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(1,((Spielbrett)view).schwarzerCoinSetzen(i,v));
                 model.einsatzSetzen("1",500);
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB2()){
-            try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
-                }
-            }
-            catch(Exception p){
-                System.out.println("Andreas Mandl!");
+            if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(2));
             }
             
             int i=839;
             int v=529;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(2,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("2",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -133,19 +125,13 @@ public class Controller implements ActionListener{
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB3()){
-            try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
-                }
+            if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(3));
             }
-            catch(Exception p){
-                System.out.println("Andreas Mandl!");
-            }
-            
             int i=839;
             int v=577;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(3,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("3",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -166,19 +152,14 @@ public class Controller implements ActionListener{
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB4()){
-            try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
-                }
-            }
-            catch(Exception p){
-                System.out.println("Andreas Mandl!");
+            if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(4));
             }
             
             int i=799;
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(4,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("4",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -199,19 +180,13 @@ public class Controller implements ActionListener{
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB5()){
-            try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
-                }
+            if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(5));
             }
-            catch(Exception p){
-                System.out.println("Andreas Mandl!");
-            }
-            
             int i=799;
             int v=529;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(5,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("5",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -232,19 +207,17 @@ public class Controller implements ActionListener{
             }
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB6()){
-            try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
-                }
+            
+            if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(6));
             }
-            catch(Exception p){
-                System.out.println("Andreas Mandl!");
-            }
+            
+           
             
             int i=799;
             int v=577;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(6,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("6",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -266,18 +239,18 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB7()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(7));
                 }
             }
             catch(Exception p){
-                System.out.println("Andreas Mandl!");
+                
             }
             
             int i=760;
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(7,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("7",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -299,18 +272,18 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB8()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(8));
                 }
             }
             catch(Exception p){
-                System.out.println("Andreas Mandl!");
+                
             }
             
             int i=760;
             int v=529;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(8,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("8",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -332,18 +305,18 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB9()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(9));
                 }
             }
             catch(Exception p){
-                System.out.println("Andreas Mandl!");
+                
             }
             
             int i=760;
             int v=577;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(9,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("9",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -365,18 +338,18 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB10()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(10));
                 }
             }
             catch(Exception p){
-                System.out.println("Andreas Mandl!");
+                
             }
             
             int i=721;
             int v=481;
             if(((Spielbrett)view).wertGeben()==1){
-                ((Spielbrett)view).weißerCoinSetzen(i,v);
+                ((Spielbrett)view).coinSetzen(10,((Spielbrett)view).weißerCoinSetzen(i,v));
                 model.einsatzSetzen("10",1);
             }
             else if(((Spielbrett)view).wertGeben()==10){
@@ -398,8 +371,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB11()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(11));
                 }
             }
             catch(Exception p){
@@ -431,8 +404,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB12()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(12));
                 }
             }
             catch(Exception p){
@@ -464,8 +437,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB13()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(13));
                 }
             }
             catch(Exception p){
@@ -497,8 +470,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB14()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(14));
                 }
             }
             catch(Exception p){
@@ -530,8 +503,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB15()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(15));
                 }
             }
             catch(Exception p){
@@ -563,8 +536,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB16()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(16));
                 }
             }
             catch(Exception p){
@@ -596,8 +569,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB17()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(17));
                 }
             }
             catch(Exception p){
@@ -629,8 +602,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB18()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(18));
                 }
             }
             catch(Exception p){
@@ -662,8 +635,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB19()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(19));
                 }
             }
             catch(Exception p){
@@ -695,8 +668,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB20()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(20));
                 }
             }
             catch(Exception p){
@@ -728,8 +701,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB21()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(21));
                 }
             }
             catch(Exception p){
@@ -761,8 +734,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB22()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(22));
                 }
             }
             catch(Exception p){
@@ -794,8 +767,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB23()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(23));
                 }
             }
             catch(Exception p){
@@ -827,8 +800,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB24()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(24));
                 }
             }
             catch(Exception p){
@@ -860,8 +833,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB25()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(25));
                 }
             }
             catch(Exception p){
@@ -893,8 +866,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB26()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(26));
                 }
             }
             catch(Exception p){
@@ -926,8 +899,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB27()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(27));
                 }
             }
             catch(Exception p){
@@ -959,8 +932,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB28()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(28));
                 }
             }
             catch(Exception p){
@@ -992,8 +965,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB29()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(29));
                 }
             }
             catch(Exception p){
@@ -1025,8 +998,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB30()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(30));
                 }
             }
             catch(Exception p){
@@ -1058,8 +1031,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB31()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(31));
                 }
             }
             catch(Exception p){
@@ -1091,8 +1064,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB32()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(32));
                 }
             }
             catch(Exception p){
@@ -1124,8 +1097,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB33()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(33));
                 }
             }
             catch(Exception p){
@@ -1157,8 +1130,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB34()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(34));
                 }
             }
             catch(Exception p){
@@ -1190,8 +1163,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB35()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(35));
                 }
             }
             catch(Exception p){
@@ -1223,12 +1196,12 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB36()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(36));
                 }
             }
             catch(Exception p){
-                System.out.println("Andreas Mandl!");
+                
             }
             
             int i=414;
@@ -1256,8 +1229,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB37()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(37));
                 }
             }
             catch(Exception p){
@@ -1289,8 +1262,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB38()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(38));
                 }
             }
             catch(Exception p){
@@ -1322,8 +1295,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB39()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(39));
                 }
             }
             catch(Exception p){
@@ -1355,8 +1328,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB40()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(40));
                 }
             }
             catch(Exception p){
@@ -1388,8 +1361,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB41()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(41));
                 }
             }
             catch(Exception p){
@@ -1421,8 +1394,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB42()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(42));
                 }
             }
             catch(Exception p){
@@ -1454,8 +1427,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB43()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(43));
                 }
             }
             catch(Exception p){
@@ -1487,8 +1460,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB44()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(44));
                 }
             }
             catch(Exception p){
@@ -1520,8 +1493,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB45()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(45));
                 }
             }
             catch(Exception p){
@@ -1553,8 +1526,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB46()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(46));
                 }
             }
             catch(Exception p){
@@ -1586,8 +1559,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB47()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(47));
                 }
             }
             catch(Exception p){
@@ -1619,8 +1592,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB48()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(48));
                 }
             }
             catch(Exception p){
@@ -1652,8 +1625,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getB49()){
             try{
-                if(!(((Spielbrett)view).getAktuellerCoin()==null)){
-                  ((Spielbrett)view).remove(((Spielbrett)view).getAktuellerCoin());
+                if(((Spielbrett)view).getGesetzterCoin(1)!=null){
+                  ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(49));
                 }
             }
             catch(Exception p){

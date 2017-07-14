@@ -26,37 +26,50 @@ public class Spiel implements Model{
   }
   public int[] spielen(){
     Integer gewinnzahl = (int) (Math.random()*37);
-    System.out.println(gewinnzahl);
     int gewinn = 0;
     if(benutzer.equals("Andreas Mandl") && einsatz.size()>0){
-      /* gewinnzahl =  andreasMandl(einsatz.get(einsatz.size()-1));
-        for(int i = 0; i<einsatz.size();i++){
-            System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i)));
+       gewinnzahl =  andreasMandl(einsatz.get(einsatz.size()-1));
+       for(int i = 0; i<einsatz.size();i++){
             gewinn += zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i));
-        }*/
+       }
     }
     else{
         for(int i = 0; i<einsatz.size();i++){
-            System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i)));
             gewinn += zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i));
         }
     }
-    int[] erg = {gewinnzahl,gewinn};
-    
-   
     for(int i = 0; i<einsatz.size();i++){
             gewinn -= einsatzBetrag.get(i);
-        }
-        try{
-        db.GewinnHinzufuegen(benutzer,gewinn);
-      }
-      catch(Exception e){
-      }
+    }
+    int[] erg = {gewinnzahl,gewinn};
+    try{
+        db.gewinnHinzufuegen(benutzer,gewinn);
+    }
+    catch(Exception e){
+    }
     return erg;
   }
+  /**
+   * Fügt einen Einsatz hinzu
+   */
   public void einsatzSetzen(String s, Integer i){
     einsatz.add(s);
     einsatzBetrag.add(i);
+  }
+  /**
+   * @return true falls der Kontostand ausreicht
+   */
+  public boolean ausreichendGeld(){
+    int temp = 0;
+    for(int i = 0; i<einsatz.size();i++){
+        temp +=einsatzBetrag.get(i);
+    }
+    if(temp<=Double.parseDouble(getBetrag())){
+        return true;
+    }
+    else {
+        return false;
+    }
   }
   private int zahlVergleichen(Integer zahl,int gesetzterBertrag, String zahlGesetzt){
       if(zahlGesetzt.equals(zahl.toString())){
@@ -572,6 +585,9 @@ public class Spiel implements Model{
       else if(zahl == 17){
           return true;
         }
+      else if(zahl == 20){
+          return true;
+        }
       else if(zahl == 22){
           return true;
         }
@@ -600,157 +616,156 @@ public class Spiel implements Model{
           return false;
         }
     }
-  /*public int andreasMandl(String ef){
-    char e = '0';
-      switch(e){
-        case "0":{
+  public int andreasMandl(String e){
+    
+      
+        if( e == "0"){
             return 0;
         }
-        case "1":{
+        else if( e == "1"){
             return 1;
         }
-        case "2":{
+        else if( e == "2"){
             return 2;
         }
-        case "3":{
+        else if( e == "3"){
             return 3;
         }
-        case "4":{
+        else if( e == "4"){
             return 4;
         }
-        case "5":{
+        else if( e == "5"){
             return 5;
         }
-        case "6":{
+        else if( e == "6"){
             return 6;
         }
-        case "7":{
+        else if( e == "7"){
             return 7;
         }
-        case "8":{
+        else if( e == "8"){
             return 8;
         }
-        case "9":{
+        else if( e == "9"){
             return 9;
         }
-        case "10":{
+        else if( e == "10"){
             return 10;
         }
-        case "11":{
+        else if( e == "11"){
             return 11;
         }
-        case "12":{
+        else if( e == "12"){
             return 12;
         }
-        case "13":{
+        else if( e ==  "13"){
             return 13;
         }
-        case "14":{
+        else if( e ==  "14"){
             return 14;
         }
-        case "15":{
+        else if( e ==  "15"){
             return 15;
         }
-        case "16":{
+        else if( e ==  "16"){
             return 16;
         }
-        case "17":{
+        else if( e ==  "17"){
             return 17;
         }
-        case "18":{
+        else if( e ==  "18"){
             return 18;
         }
-        case "19":{
+        else if( e ==  "19"){
             return 19;
         }
-        case "20":{
+        else if( e ==  "20"){
             return 20;
         }
-        case "21":{
+        else if( e ==  "21"){
             return 21;
         }
-        case "22":{
+        else if( e ==  "22"){
             return 22;
         }
-        case "23":{
+        else if( e ==  "23"){
             return 23;
         }
-        case "24":{
+        else if( e ==  "24"){
             return 24;
         }
-        case "25":{
+        else if( e ==  "25"){
             return 25;
         }
-        case "26":{
+        else if( e ==  "26"){
             return 26;
         }
-        case "27":{
+        else if( e ==  "27"){
             return 27;
         }
-        case "28":{
+        else if( e ==  "28"){
             return 28;
         }
-        case "29":{
+        else if( e ==  "29"){
             return 29;
         }
-        case "30":{
+        else if( e ==  "30"){
             return 30;
         }
-        case "31":{
+        else if( e ==  "31"){
             return 31;
         }
-        case "32":{
+        else if( e ==  "32"){
             return 32;
         }
-        case "33":{
+        else if( e ==  "33"){
             return 33;
         }
-        case "34":{
+        else if( e ==  "34"){
             return 34;
         }
-        case "35":{
+        else if( e ==  "35"){
             return 35;
         }
-        case "36":{
+        else if( e ==  "36"){
             return 36;
         }
-        case "rot":{
+        else if( e ==  "rot"){
             return 9;
         }
-        case "schwarz":{
+        else if( e ==  "schwarz"){
             return 26;
         }
-        case "1-18":{
+        else if( e ==  "1-18"){
             return 4;
         }
-        case "19-36":{
+        else if( e ==  "19-36"){
             return 20;
         }
-        case "gerade":{
+        else if( e ==  "gerade"){
             return 2;
         }
-        case "ungerade":{
+        else if( e ==  "ungerade"){
             return 3;
         }
-        case "erstesdrittel":{
+        else if( e ==  "erstesdrittel"){
             return 1;
         }
-        case "zweitesdrittel":{
+        else if( e ==  "zweitesdrittel"){
             return 15;
         }
-        case "drittesdrittel":{
+        else if( e ==  "drittesdrittel"){
             return 28;
         }
-        case "erstereihe":{
+        else if( e ==  "erstereihe"){
             return 1;
         }
-        case "zweitereihe":{
+        else if( e ==  "zweitereihe"){
             return 2;
         }
-        case "drittereihe":{
+        else if( e ==  "drittereihe"){
             return 3;
         }
-      }
-      return 0;
-  }*/
+        return 0;
+  }
 } // Ende der Klasse Spiel
