@@ -29,7 +29,7 @@ public class Spiel implements Model{
     System.out.println(gewinnzahl);
     int gewinn = 0;
     if(benutzer.equals("Andreas Mandl") && einsatz.size()>0){
-       /* gewinnzahl =  andreasMandl(einsatz.get(einsatz.size()-1));
+      /* gewinnzahl =  andreasMandl(einsatz.get(einsatz.size()-1));
         for(int i = 0; i<einsatz.size();i++){
             System.out.println("Gewinn: "+zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i)));
             gewinn += zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i));
