@@ -16,4 +16,6 @@ comment7.params=s\ i
 comment7.target=void\ einsatzSetzen(java.lang.String,\ java.lang.Integer)
 comment8.params=
 comment8.target=boolean\ ausreichendGeld()
-numComments=9
+comment9.params=x\ s
+comment9.target=void\ removeEinsatzBetrag(Bild,\ java.lang.String)
+numComments=10

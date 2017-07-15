@@ -9,4 +9,5 @@ public interface Model
     int[] spielen();
     void einsatzSetzen(String s, Integer i);
     boolean ausreichendGeld();
+    void removeEinsatzBetrag(Bild x, String s);
 }

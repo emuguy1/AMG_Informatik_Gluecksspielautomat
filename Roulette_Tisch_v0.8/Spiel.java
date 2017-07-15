@@ -10,6 +10,10 @@ public class Spiel implements Model{
   public void setView(View v){
     
   }
+  public void removeEinsatzBetrag(Bild x, String s){
+      einsatzBetrag.remove(x.getValue());
+      einsatz.remove(s);
+  }
   public boolean anmelden(String benutzername, String passwort){
     benutzer = benutzername;
     return db.anmelden(benutzername , passwort);

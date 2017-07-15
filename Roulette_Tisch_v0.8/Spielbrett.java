@@ -196,7 +196,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         gesetzteCoins[index] = b;
     }
     public Bild getGesetzterCoin(int index){
-        return gesetzteCoins[index];
+        return gesetzteCoins[index-1];
     }
     public void setUpMenu(){
         //ACTIONLISTENER
@@ -441,7 +441,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
        try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
 
-            bild = new Bild(image); 
+            bild = new Bild(image,10); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
@@ -455,11 +455,11 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinergrünerCoin.png"));
 
-            bild = new Bild(image); 
+            bild = new Bild(image,100); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-             return bild;
+            return bild;
         }
         catch(Exception e){
             return null;
@@ -469,11 +469,11 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerweißerCoin.png"));
 
-            bild = new Bild(image); 
+            bild = new Bild(image,1); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-             return bild;
+            return bild;
         }
         catch(Exception e){
             return null;
@@ -483,11 +483,11 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerblauerCoin.png"));
 
-            bild = new Bild(image); 
+            bild = new Bild(image,50); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-             return bild;
+            return bild;
         }
         catch(Exception e){
             return null;
@@ -497,11 +497,11 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerschwarzerCoin.png"));
 
-            bild = new Bild(image); 
+            bild = new Bild(image,500); 
             bild.setBounds(i,v,20,20);
             add(bild);
             this.repaint();
-             return bild;
+            return bild;
         }
         catch(Exception e){
             return null;
