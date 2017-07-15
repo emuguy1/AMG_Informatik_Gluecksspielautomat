@@ -25,7 +25,6 @@ public class Controller implements ActionListener{
                 view.dispose();
                 view = new Spielbrett(this,model);
                 model.setView(view);
-                
             }
             else{   
                 //falls fehlgeschlagen
@@ -62,7 +61,7 @@ public class Controller implements ActionListener{
             model = new Spiel();
             model.setView(view);
         }else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
-            //SPIELEN
+            //SPIELEN 
             if(((Spielbrett)view).ready()&& model.ausreichendGeld()){
                 int[] i = model.spielen();
                 ((Spielbrett)view).kugelanimation(i[0],i[1]);

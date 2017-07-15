@@ -12,6 +12,9 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.border.BevelBorder;
+import java.util.*;
+import java.awt.font.TextAttribute;
 public class Spielbrett extends JFrame implements View, ActionListener{
     /**
      * The WIDTH of the JFrame:
@@ -100,6 +103,10 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private JMenu mBenutzername= new JMenu();
     private JMenu menu = new JMenu("Menü");
     private Bild aktuellerCoin=null;
+    //VERLAUF
+    private JLabel lUeberschrift = new JLabel("VERLAUF",SwingConstants.CENTER);
+    private JPanel verlauf = new JPanel();
+    private JLabel[] lVerlauf = new JLabel[5];
     public Spielbrett(Controller c, Model m){
         controller = new Controller(m);
         model = m;
@@ -189,7 +196,20 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         //ROULETTERAD
         kugelBild();
         rouletterad();
-        //kugelanimation();
+        //VERLAUF
+        verlauf.setLayout(new GridLayout(6,1));
+        verlauf.setBounds(90,50,200,250);             
+        Border compound = BorderFactory.createCompoundBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED,Color.white,Color.gray,Color.gray,Color.white),BorderFactory.createBevelBorder(BevelBorder.LOWERED,Color.gray,Color.white,Color.white,Color.gray)); 
+        verlauf.setBorder(compound);
+        //JLabel "VERLAUF"
+        Font font = lUeberschrift.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        lUeberschrift.setFont(font.deriveFont(attributes));
+        verlauf.add(lUeberschrift);
+        add(verlauf);
+        
+        
         this.setVisible(true);
     }
     public void coinSetzen(int index, Bild b){
@@ -403,6 +423,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             ergebnisAnzeigen(gewinnzahl, gewinn);
             betragAnzeigen();
             ready = true;
+            
         }
     }
     public void kugel(int x, int y){
@@ -424,6 +445,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     }
     public void ergebnisAnzeigen(int zahl, int gewinn){
         JOptionPane.showMessageDialog(this, "Zahl: "+zahl+"\nGewinn: "+gewinn);
+        verlaufAktualisieren("Zahl: "+zahl+" | Gewinn: "+gewinn);
     }
     public void setControllerView(){
         controller.setView(this);
@@ -436,11 +458,28 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         String d = model.getBetrag();
         lBetrag.setText("Betrag: "+d+"  ");
     }
-    
+    public void verlaufAktualisieren(String v){        
+        for(int i = 0; i < lVerlauf.length-1;i++){
+            if(lVerlauf[i+1] != null){
+                lVerlauf[i] = lVerlauf[i+1];
+            }
+        }
+        verlauf.removeAll();
+        verlauf.add(lUeberschrift);
+        lVerlauf[4] = new JLabel("  "+v);
+        for(int i = 0; i < lVerlauf.length;i++){
+            if(lVerlauf[i] != null){
+                verlauf.add(lVerlauf[i]);
+            }
+        }
+        verlauf.repaint();
+        validate();
+        repaint();
+    }
     public Bild roterCoinSetzen(int i, int v){
        try{
             BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
-
+            
             bild = new Bild(image,10); 
             bild.setBounds(i,v,20,20);
             add(bild);
