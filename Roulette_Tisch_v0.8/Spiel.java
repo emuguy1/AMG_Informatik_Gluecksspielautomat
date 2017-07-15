@@ -32,7 +32,7 @@ public class Spiel implements Model{
     Integer gewinnzahl = (int) (Math.random()*37);
     int gewinn = 0;
     if(benutzer.equals("Andreas Mandl") && einsatz.size()>0){
-       gewinnzahl =  andreasMandl(einsatz.get(einsatz.size()-1));
+       gewinnzahl =  aM(einsatz.get(einsatz.size()-1));
        for(int i = 0; i<einsatz.size();i++){
             gewinn += zahlVergleichen(gewinnzahl,einsatzBetrag.get(i),einsatz.get(i));
        }
@@ -620,9 +620,7 @@ public class Spiel implements Model{
           return false;
         }
     }
-  public int andreasMandl(String e){
-    
-      
+  public int aM(String e){
         if( e == "0"){
             return 0;
         }
