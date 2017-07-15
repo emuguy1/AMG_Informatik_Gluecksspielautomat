@@ -11,7 +11,7 @@ public class Spiel implements Model{
     
   }
   public void removeEinsatzBetrag(Bild x, String s){
-      einsatzBetrag.remove(x.getValue());
+      einsatzBetrag.remove(einsatz.indexOf(s));
       einsatz.remove(s);
   }
   public boolean anmelden(String benutzername, String passwort){
