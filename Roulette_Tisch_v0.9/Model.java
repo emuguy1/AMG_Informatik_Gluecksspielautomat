@@ -10,4 +10,5 @@ public interface Model
     void einsatzSetzen(String s, Integer i);
     boolean ausreichendGeld();
     void removeEinsatzBetrag(Bild x, String s);
+    void reset();
 }

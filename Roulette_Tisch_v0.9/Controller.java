@@ -60,7 +60,12 @@ public class Controller implements ActionListener{
             view = new Login(this);
             model = new Spiel();
             model.setView(view);
-        }else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getBReset()){
+            ((Spielbrett)view).reset();
+            model.reset();
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getSpielenButton()){
             //SPIELEN 
             if(((Spielbrett)view).ready()&& model.ausreichendGeld()){
                 int[] i = model.spielen();

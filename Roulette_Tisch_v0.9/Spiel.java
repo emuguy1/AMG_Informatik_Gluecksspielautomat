@@ -28,6 +28,10 @@ public class Spiel implements Model{
   public String getBenutzername(){
       return benutzer;
   }
+  public void reset(){
+      einsatz = new ArrayList<String>();
+      einsatzBetrag = new ArrayList<Integer>();
+  }
   public int[] spielen(){
     Integer gewinnzahl = (int) (Math.random()*37);
     int gewinn = 0;

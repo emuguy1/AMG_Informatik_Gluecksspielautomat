@@ -81,6 +81,8 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private Bild[] gesetzteCoins = new Bild[49];
     //AUSWAHLFELD FÜR COINS
     private ComboBox comboBox = new ComboBox();
+    //COINSZURÜCKSETZEN
+    private JButton bReset = new JButton("Einsatz zurücksetzen");
     //BILD
     private Bild bild;
     //SPIELEN BUTTON
@@ -198,7 +200,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         rouletterad();
         //VERLAUF
         verlauf.setLayout(new GridLayout(6,1));
-        verlauf.setBounds(90,50,200,250);             
+        verlauf.setBounds(90,20,200,250);             
         Border compound = BorderFactory.createCompoundBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED,Color.white,Color.gray,Color.gray,Color.white),BorderFactory.createBevelBorder(BevelBorder.LOWERED,Color.gray,Color.white,Color.white,Color.gray)); 
         verlauf.setBorder(compound);
         //JLabel "VERLAUF"
@@ -208,9 +210,22 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         lUeberschrift.setFont(font.deriveFont(attributes));
         verlauf.add(lUeberschrift);
         add(verlauf);
+        //COINRESET
+        bReset.setBounds(90,275,200,25);
         
-        
+        bReset.addActionListener(controller);
+        add(bReset);
         this.setVisible(true);
+    }
+    public void reset(){
+        for(int i = 0; i<49;i++){
+            if(gesetzteCoins[i]!=null){
+                remove(gesetzteCoins[i]);
+                gesetzteCoins[i] = null;
+                
+            }
+        }
+        repaint();
     }
     public void coinSetzen(int index, Bild b){
         gesetzteCoins[index] = b;
@@ -970,5 +985,8 @@ public class Spielbrett extends JFrame implements View, ActionListener{
      */
     public boolean ready(){
         return ready;
+    }
+    public JButton getBReset(){
+        return bReset;
     }
 }

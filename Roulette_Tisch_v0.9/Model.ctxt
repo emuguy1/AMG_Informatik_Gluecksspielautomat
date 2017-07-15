@@ -2,6 +2,8 @@
 comment0.target=Model
 comment1.params=benutzername\ passwort
 comment1.target=boolean\ anmelden(java.lang.String,\ java.lang.String)
+comment10.params=
+comment10.target=void\ reset()
 comment2.params=benutzername\ passwort
 comment2.target=boolean\ registrieren(java.lang.String,\ java.lang.String)
 comment3.params=v
@@ -18,4 +20,4 @@ comment8.params=
 comment8.target=boolean\ ausreichendGeld()
 comment9.params=x\ s
 comment9.target=void\ removeEinsatzBetrag(Bild,\ java.lang.String)
-numComments=10
+numComments=11
