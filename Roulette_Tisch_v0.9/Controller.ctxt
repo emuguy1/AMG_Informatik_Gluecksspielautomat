@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Controller
+comment1.params=m
+comment1.target=Controller(Model)
+comment2.params=v
+comment2.target=void\ setView(View)
+comment3.params=m
+comment3.target=void\ setModel(Model)
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=i\ v\ e\ index
+comment5.target=void\ coinSetzen(int,\ int,\ java.lang.String,\ int)
+numComments=6
