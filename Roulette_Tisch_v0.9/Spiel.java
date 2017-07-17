@@ -7,6 +7,7 @@ public class Spiel implements Model{
   public Spiel()  {  
     //Objektvariablen initialisieren  
   }
+  
   public void setView(View v){
     
   }

@@ -78,6 +78,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(1)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(1));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(1), "1");
+                ((Spielbrett)view).coinEntfernen(0);
             }
             else{
                 coinSetzen(i,v,"1",1);
@@ -90,6 +91,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(2)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(2));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(2), "2");
+                ((Spielbrett)view).coinEntfernen(1);
             }
             else{
                 coinSetzen(i,v,"2",2);
@@ -101,6 +103,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(3)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(3));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(3), "3");
+                ((Spielbrett)view).coinEntfernen(2);
             }
             else{
                 coinSetzen(i,v,"3",3);
@@ -112,6 +115,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(4)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(4));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(4), "4");
+                ((Spielbrett)view).coinEntfernen(3);
             }
             else{
                 coinSetzen(i,v,"4",4);
@@ -123,6 +127,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(5)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(5));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(5), "5");
+                ((Spielbrett)view).coinEntfernen(4);
             }
             else{
                 coinSetzen(i,v,"5",5);
@@ -134,6 +139,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(6)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(6));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(6), "6");
+                ((Spielbrett)view).coinEntfernen(5);
             }
             else{
                 coinSetzen(i,v,"6",6);
@@ -145,6 +151,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(7)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(7));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(7), "7");
+                ((Spielbrett)view).coinEntfernen(6);
             }
             else{
                 coinSetzen(i,v,"7",7);
@@ -156,6 +163,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(8)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(8));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(8), "8");
+                ((Spielbrett)view).coinEntfernen(7);
             }
             else{
                 coinSetzen(i,v,"8",8);
@@ -168,6 +176,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(9)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(9));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(9), "9");
+                ((Spielbrett)view).coinEntfernen(8);
             }
             else{
                 coinSetzen(i,v,"9",9);
@@ -179,6 +188,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(10)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(10));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(10), "10");
+                ((Spielbrett)view).coinEntfernen(9);
             }
             else{
                 coinSetzen(i,v,"10",10);
@@ -190,6 +200,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(11)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(11));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(11), "11");
+                ((Spielbrett)view).coinEntfernen(10);
             }
             else{
                 coinSetzen(i,v,"11",11);
@@ -201,6 +212,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(12)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(12));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(12), "12");
+                ((Spielbrett)view).coinEntfernen(11);
             }
             else{
                 coinSetzen(i,v,"12",12);
@@ -212,6 +224,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(13)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(13));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(13), "13");
+                ((Spielbrett)view).coinEntfernen(12);
             }
             else{
                 coinSetzen(i,v,"13",13);
@@ -223,6 +236,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(14)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(14));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(14), "14");
+                ((Spielbrett)view).coinEntfernen(13);
             }
             else{
                 coinSetzen(i,v,"14",14);
@@ -234,6 +248,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(15)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(15));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(15), "15");
+                ((Spielbrett)view).coinEntfernen(14);
             }
             else{
                 coinSetzen(i,v,"15",15);
@@ -245,6 +260,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(16)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(16));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(16), "16");
+                ((Spielbrett)view).coinEntfernen(15);
             }
             else{
                 coinSetzen(i,v,"16",16);
@@ -256,6 +272,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(17)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(17));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(17), "17");
+                ((Spielbrett)view).coinEntfernen(16);
             }
             else{
                 coinSetzen(i,v,"17",17);
@@ -267,6 +284,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(18)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(18));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(18), "18");
+                ((Spielbrett)view).coinEntfernen(17);
             }
             else{
                 coinSetzen(i,v,"18",18);
@@ -278,6 +296,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(19)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(19));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(19), "19");
+                ((Spielbrett)view).coinEntfernen(18);
             }
             else{
                 coinSetzen(i,v,"19",19);
@@ -289,6 +308,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(20)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(20));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(20), "20");
+                ((Spielbrett)view).coinEntfernen(19);
             }
             else{
                 coinSetzen(i,v,"20",20);
@@ -300,6 +320,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(21)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(21));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(21), "21");
+                ((Spielbrett)view).coinEntfernen(20);
             }
             else{
                 coinSetzen(i,v,"21",21);
@@ -311,6 +332,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(22)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(22));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(22), "22");
+                ((Spielbrett)view).coinEntfernen(22);
             }
             else{
                 coinSetzen(i,v,"22",22);
@@ -322,6 +344,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(23)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(23));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(23), "23");
+                ((Spielbrett)view).coinEntfernen(22);
             }
             else{
                 coinSetzen(i,v,"23",23);
@@ -333,6 +356,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(24)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(24));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(24), "24");
+                ((Spielbrett)view).coinEntfernen(23);
             }
             else{
                 coinSetzen(i,v,"24",24);
@@ -344,6 +368,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(25)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(25));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(25), "25");
+                ((Spielbrett)view).coinEntfernen(24);
             }
             else{
                 coinSetzen(i,v,"25",25);
@@ -355,6 +380,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(26)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(26));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(26), "26");
+                ((Spielbrett)view).coinEntfernen(25);
             }
             else{
                 coinSetzen(i,v,"26",26);
@@ -366,6 +392,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(27)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(27));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(27), "27");
+                ((Spielbrett)view).coinEntfernen(26);
             }
             else{
                 coinSetzen(i,v,"27",27);
@@ -377,6 +404,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(28)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(28));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(28), "28");
+                ((Spielbrett)view).coinEntfernen(27);
             }
             else{
                 coinSetzen(i,v,"28",28);
@@ -388,6 +416,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(29)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(29));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(29), "29");
+                ((Spielbrett)view).coinEntfernen(28);
             }
             else{
                 coinSetzen(i,v,"29",29);
@@ -399,6 +428,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(30)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(30));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(30), "30");
+                ((Spielbrett)view).coinEntfernen(29);
             }
             else{
                 coinSetzen(i,v,"30",30);
@@ -410,6 +440,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(31)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(31));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(31), "31");
+                ((Spielbrett)view).coinEntfernen(30);
             }
             else{
                 coinSetzen(i,v,"31",31);
@@ -421,6 +452,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(32)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(32));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(32), "32");
+                ((Spielbrett)view).coinEntfernen(31);
             }
             else{
                 coinSetzen(i,v,"32",32);
@@ -432,6 +464,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(33)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(33));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(33), "33");
+                ((Spielbrett)view).coinEntfernen(32);
             }
             else{
                 coinSetzen(i,v,"33",33);
@@ -443,6 +476,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(34)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(34));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(34), "34");
+                ((Spielbrett)view).coinEntfernen(33);
             }
             else{
                 coinSetzen(i,v,"34",34);
@@ -454,6 +488,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(23)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(35));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(35), "35");
+                ((Spielbrett)view).coinEntfernen(34);
             }
             else{
                 coinSetzen(i,v,"35",35);
@@ -465,6 +500,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(36)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(36));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(36), "36");
+                ((Spielbrett)view).coinEntfernen(35);
             }
             else{
                 coinSetzen(i,v,"36",36);
@@ -476,6 +512,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(37)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(37));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(37), "erstereihe");
+                ((Spielbrett)view).coinEntfernen(36);
             }
             else{
                 coinSetzen(i,v,"erstereihe",37);
@@ -487,6 +524,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(38)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(38));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(38), "zweitereihe");
+                ((Spielbrett)view).coinEntfernen(37);
             }
             else{
                 coinSetzen(i,v,"zweitereihe",38);
@@ -498,6 +536,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(39)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(39));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(39), "drittereihe");
+                ((Spielbrett)view).coinEntfernen(38);
             }
             else{
                 coinSetzen(i,v,"drittereihe",39);
@@ -509,6 +548,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(40)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(40));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(40), "erstesdrittel");
+                ((Spielbrett)view).coinEntfernen(39);
             }
             else{
                 coinSetzen(i,v,"erstesdrittel",40);
@@ -520,6 +560,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(41)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(41));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(41), "zweitesdrittel");
+                ((Spielbrett)view).coinEntfernen(40);
             }
             else{
                 coinSetzen(i,v,"zweitesdrittel",41);
@@ -531,6 +572,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(42)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(42));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(42), "drittesdrittel");
+                ((Spielbrett)view).coinEntfernen(41);
             }
             else{
                 coinSetzen(i,v,"drittesdrittel",42);
@@ -542,6 +584,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(43)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(43));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(43), "19-36");
+                ((Spielbrett)view).coinEntfernen(42);
             }
             else{
                 coinSetzen(i,v,"19-36",43);
@@ -553,6 +596,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(44)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(44));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(44), "ungerade");
+                ((Spielbrett)view).coinEntfernen(43);
             }
             else{
                 coinSetzen(i,v,"ungerade",44);
@@ -564,6 +608,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(45)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(45));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(45), "schwarz");
+                ((Spielbrett)view).coinEntfernen(44);
             }
             else{
                 coinSetzen(i,v,"schwarz",45);
@@ -575,6 +620,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(46)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(46));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(46), "rot");
+                ((Spielbrett)view).coinEntfernen(45);
             }
             else{
                 coinSetzen(i,v,"rot",46);
@@ -586,6 +632,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(47)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(47));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(47), "gerade");
+                ((Spielbrett)view).coinEntfernen(46);
             }
             else{
                 coinSetzen(i,v,"gerade",47);
@@ -597,6 +644,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(48)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(48));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(48), "1-18");
+                ((Spielbrett)view).coinEntfernen(47);
             }
             else{
                 coinSetzen(i,v,"1-18",48);
@@ -608,6 +656,7 @@ public class Controller implements ActionListener{
             if(((Spielbrett)view).getGesetzterCoin(49)!=null){
                 ((Spielbrett)view).remove(((Spielbrett)view).getGesetzterCoin(49));
                 model.removeEinsatzBetrag(((Spielbrett)view).getGesetzterCoin(49), "0");
+                ((Spielbrett)view).coinEntfernen(48);
             }
             else{
                 coinSetzen(i,v,"0",49);

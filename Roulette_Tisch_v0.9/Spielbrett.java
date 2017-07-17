@@ -227,6 +227,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         }
         repaint();
     }
+    public void coinEntfernen(int index){
+        gesetzteCoins[index] = null;
+    }
     public void coinSetzen(int index, Bild b){
         gesetzteCoins[index] = b;
     }
