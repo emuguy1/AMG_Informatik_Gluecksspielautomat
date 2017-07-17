@@ -101,6 +101,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private JMenuItem mItem1 = new JMenuItem("Einstellungen");
     private JMenuItem mItem2 = new JMenuItem("Abmelden");
     private JMenuItem mItem3 = new JMenuItem("Hilfe");
+    private JMenuItem mItem4 = new JMenuItem("Profil");
     private JLabel lBetrag = new JLabel("Betrag: ");
     private JMenu mBenutzername= new JMenu();
     private JMenu menu = new JMenu("Menü");
@@ -252,10 +253,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         mItem1.addActionListener(controller);
         mItem2.addActionListener(controller);
         mItem3.addActionListener(controller);
+        mItem4.addActionListener(controller);
         //SET UP THE MENU 
         menu.add(mItem1);
         menu.add(mItem3);
         mBenutzername.add(mItem2);
+        mBenutzername.add(mItem4);
         menuBar.add(menu);
         menuBar.add(Box.createRigidArea(new Dimension(0,30)));
         menuBar.add(Box.createHorizontalGlue()); 
@@ -1012,6 +1015,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     }
     public JMenuItem getMItem3(){
         return mItem3;
+    }
+    public JMenuItem getMItem4(){
+        return mItem4;
     }
     /**
      * @return Button um das Rouletterad zu drehen

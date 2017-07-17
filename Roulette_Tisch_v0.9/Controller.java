@@ -17,10 +17,9 @@ public class Controller implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        //Anmeldung
+        //ANMELDUNG
         if(view.getClass() == Login.class && e.getSource() == ((Login)view).getB1()){
             if(model.anmelden(((Login)view).getBenutzername(),((Login)view).getPasswort())){
-                //TODO
                 view.dispose();
                 view = new Spielbrett(this,model);
                 model.setView(view);
@@ -30,10 +29,9 @@ public class Controller implements ActionListener{
                 ((Login)view).anmeldenFehlgeschlagen();
             }
         }
-        //Registrierung
+        //REGISTRIERUNG
         else if(view.getClass() == Login.class && e.getSource() == ((Login)view).getB2()){
            if(model.registrieren(((Login)view).getBenutzername(),((Login)view).getPasswort())){
-                //TODO
                 view.dispose();
                 view = new Spielbrett(this, model);
                 model.setView(view);
@@ -43,7 +41,7 @@ public class Controller implements ActionListener{
                 ((Login)view).registrierungFehlgeschlagen();
             }
         }
-        //Spielbrettbetrieb
+        //SPIELBRETTBETRIEB
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem1()){
             //EINSTELLUNGEN
             
@@ -59,6 +57,10 @@ public class Controller implements ActionListener{
             view = new Login(this);
             model = new Spiel();
             model.setView(view);
+        }
+        else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem4()){
+            //PROFIL
+            
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getBReset()){
             ((Spielbrett)view).reset();
