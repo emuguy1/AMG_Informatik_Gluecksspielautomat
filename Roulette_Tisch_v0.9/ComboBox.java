@@ -9,8 +9,10 @@ import javax.imageio.*;
 public class ComboBox extends JPanel
                           implements ActionListener {
     JLabel picture;
+    /**
+     * Wert des ausgewählten Coins
+     */
     private int wert=0;
- 
     public ComboBox() {
         super(new BorderLayout());
  
@@ -25,7 +27,7 @@ public class ComboBox extends JPanel
         picture = new JLabel();
         picture.setFont(picture.getFont().deriveFont(Font.ITALIC));
         picture.setHorizontalAlignment(JLabel.CENTER);
-        updateLabel(zahlen[petList.getSelectedIndex()]);
+        updatePicture(zahlen[petList.getSelectedIndex()]);
         picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
  
         //The picture's size
@@ -36,60 +38,50 @@ public class ComboBox extends JPanel
         add(picture, BorderLayout.PAGE_END);
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
     }
- 
-    /** Listens to the combo box. */
+    /**
+     * Listens to the ComboBox
+     */
     public void actionPerformed(ActionEvent e) {
         JComboBox cb = (JComboBox)e.getSource();
         String petName = (String)cb.getSelectedItem();
-        updateLabel(petName);
+        updatePicture(petName);
     }
- 
-    protected void updateLabel(String name) {
+    /**
+     * Updates the Picture
+     */
+    private void updatePicture(String name) {
        if(name.equals("1")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´weißerCoin1.png");
+            ImageIcon icon = new ImageIcon(System.getProperty("user.dir")+"/res/cbWeißerCoin.png");
             picture.setIcon(icon);
             picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(1);
         }
         else if(name.equals("10")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´roterCoin1.png");
+            ImageIcon icon = new ImageIcon(System.getProperty("user.dir")+"/res/cbRoterCoin.png");
             picture.setIcon(icon);
             picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(10);
         }
         else if(name.equals("50")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´blauerCoin1.png");
+            ImageIcon icon = new ImageIcon(System.getProperty("user.dir")+"/res/cbBlauerCoin.png");
             picture.setIcon(icon);
             picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(50);
         }
         else if(name.equals("100")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´grünerCoin1.png");
+            ImageIcon icon = new ImageIcon(System.getProperty("user.dir")+"/res/cbGrünerCoin.png");
             picture.setIcon(icon);
             picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(100);
         }
         else if(name.equals("500")){
-            ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/´schwarzerCoin1.png");
+            ImageIcon icon = new ImageIcon(System.getProperty("user.dir")+"/res/cbSchwarzerCoin.png");
             picture.setIcon(icon);
             picture.setToolTipText(name.toLowerCase()+"€ Jeton");
             wertSetzen(500);
         }
-        else{
-        ImageIcon icon = createImageIcon(System.getProperty("user.dir")+"/"+name+".png");
-        picture.setIcon(icon);
-        picture.setToolTipText("A drawing of a " + name.toLowerCase());
-        if (icon != null) {
-            picture.setText(null);
-        } else {
-            picture.setText("Image not found");
-        }
-       }
     }
-    protected static ImageIcon createImageIcon(String path) {
-       return new ImageIcon(path);
-    }
-     private void wertSetzen(int i){
+    private void wertSetzen(int i){
         wert=i;
     }
     public int wertGeben(){

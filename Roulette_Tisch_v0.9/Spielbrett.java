@@ -24,11 +24,11 @@ public class Spielbrett extends JFrame implements View, ActionListener{
      * The HEIGHT of the JFrame:
      */
     private final int HEIGHT = 690;
-    //Model
+    //MODEL
     private Model model;
-    //Controller:
+    //CONTROLLER
     private Controller controller;
-    //BUTTTONS
+    //EINSATZ BUTTTONS
     private JButton b1 = new JButton();
     private JButton b2 = new JButton();
     private JButton b3 = new JButton();
@@ -104,7 +104,6 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private JLabel lBetrag = new JLabel("Betrag: ");
     private JMenu mBenutzername= new JMenu();
     private JMenu menu = new JMenu("Menü");
-    private Bild aktuellerCoin=null;
     //VERLAUF
     private JLabel lUeberschrift = new JLabel("VERLAUF",SwingConstants.CENTER);
     private JPanel verlauf = new JPanel();
@@ -120,7 +119,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         setLayout(null);
         setResizable(false);
         //Hintergrundblid setzen
-        setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/roulette2.jpg")));
+        setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/res/roulette2.jpg")));
         //adding the ActionListener
         b1.addActionListener(controller);
         b2.addActionListener(controller);
@@ -180,7 +179,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         addFieldButtons();
         //SPIELEN BUTTON BILD SETZEN
         bSpielen.addActionListener(controller);
-        bSpielen.setIcon(new ImageIcon(System.getProperty("user.dir")+"/spielen.png"));
+        bSpielen.setIcon(new ImageIcon(System.getProperty("user.dir")+"/res/spielen.png"));
         bSpielen.setBounds(505,300,258,85); 
         bSpielen.getModel().addChangeListener(new ChangeListener() {
                 @Override
@@ -217,6 +216,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         add(bReset);
         this.setVisible(true);
     }
+    /**
+     * Entfernt alle gesetzten Coins vom Spielbrett
+     */
     public void reset(){
         for(int i = 0; i<49;i++){
             if(gesetzteCoins[i]!=null){
@@ -227,16 +229,25 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         }
         repaint();
     }
+    /**
+     * Entfernt einen bestimmten Coin vom Spielbrett(index 0-48)
+     */
     public void coinEntfernen(int index){
         gesetzteCoins[index] = null;
     }
     public void coinSetzen(int index, Bild b){
         gesetzteCoins[index] = b;
     }
+    /**
+     * @return Bild 
+     */
     public Bild getGesetzterCoin(int index){
         return gesetzteCoins[index-1];
     }
-    public void setUpMenu(){
+    /**
+     * Creates the Menu
+     */
+    private void setUpMenu(){
         //ACTIONLISTENER
         mItem1.addActionListener(controller);
         mItem2.addActionListener(controller);
@@ -259,7 +270,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     }
     public void rouletterad(){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/roulettescheibe.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/roulettescheibe.png"));
 
             bild = new Bild(image); 
             bild.setBounds(500,12,347,274);
@@ -270,6 +281,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             System.out.println("Rouletteradfehler"+e);
         }
     }
+    /**
+     * Startet die Kugelanimation
+     */
     public void kugelanimation(int zahl, int gewinn){
         ready = false;
         gewinnzahl = zahl;
@@ -427,6 +441,10 @@ public class Spielbrett extends JFrame implements View, ActionListener{
        
         timer.start(); 
     }
+    /**
+     * Berechnet die Position der Kugel
+     * Listens to the Timer
+     */
     @Override
     public void actionPerformed(ActionEvent e) {//633 149
         kugel((int)(Math.cos(Math.toRadians(grad))*100)+630,(int)(Math.sin(Math.toRadians(grad))*100)+141);
@@ -448,9 +466,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         kugel.setBounds(x,y,16,16);
         this.repaint();
     }
+    /**
+     * Lädt das Bild der Kugel und platziert es im JFrame
+     */
     public void kugelBild(){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kugel.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/kugel.png"));
             
             kugel = new Bild(image); 
             kugel.setBounds(629,141-100,16,16);
@@ -461,6 +482,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             System.out.println("Kugelfehler"+e);
         }
     }
+    /**
+     * Zeigt einen MessageDialog an und lässt den Verlauf aktualisieren
+     */
     public void ergebnisAnzeigen(int zahl, int gewinn){
         JOptionPane.showMessageDialog(this, "Zahl: "+zahl+"\nGewinn: "+gewinn);
         verlaufAktualisieren("Zahl: "+zahl+" | Gewinn: "+gewinn);
@@ -476,6 +500,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         String d = model.getBetrag();
         lBetrag.setText("Betrag: "+d+"  ");
     }
+    /**
+     * Aktualisiert den Verlauf
+     */
     public void verlaufAktualisieren(String v){        
         for(int i = 0; i < lVerlauf.length-1;i++){
             if(lVerlauf[i+1] != null){
@@ -494,9 +521,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         validate();
         repaint();
     }
+    /**
+     * Lädt das Bild des kleinen roten Coin und platziert es im JFrame
+     */
     public Bild roterCoinSetzen(int i, int v){
        try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerroterCoin.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/kleinerroterCoin.png"));
             
             bild = new Bild(image,10); 
             bild.setBounds(i,v,20,20);
@@ -508,9 +538,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             return null;
         } 
     }
+    /**
+     * Lädt das Bild des kleinen grünen Coin und platziert es im JFrame
+     */
     public Bild grünerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinergrünerCoin.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/kleinergrünerCoin.png"));
 
             bild = new Bild(image,100); 
             bild.setBounds(i,v,20,20);
@@ -522,9 +555,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             return null;
         } 
     }
+    /**
+     * Lädt das Bild des kleinen weißen Coin und platziert es im JFrame
+     */
     public Bild weißerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerweißerCoin.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/kleinerweißerCoin.png"));
 
             bild = new Bild(image,1); 
             bild.setBounds(i,v,20,20);
@@ -536,9 +572,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             return null;
         } 
     }
+    /**
+     * Lädt das Bild des kleinen blauen Coin und platziert es im JFrame
+     */
     public Bild blauerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerblauerCoin.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/kleinerblauerCoin.png"));
 
             bild = new Bild(image,50); 
             bild.setBounds(i,v,20,20);
@@ -550,9 +589,12 @@ public class Spielbrett extends JFrame implements View, ActionListener{
             return null;
         } 
     }
+    /**
+     * Lädt das Bild des kleinen schwarzen Coin und platziert es im JFrame
+     */
     public Bild schwarzerCoinSetzen(int i, int v){
         try{
-            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/kleinerschwarzerCoin.png"));
+            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+"/res/kleinerschwarzerCoin.png"));
 
             bild = new Bild(image,500); 
             bild.setBounds(i,v,20,20);
@@ -711,6 +753,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     public JButton getB49(){
         return b49;
     }
+    /**
+     * @return Setzt die Einsatz Buttons aufs JFrame
+     */
     private void addFieldButtons(){
         add(b1);
         add(b2);
@@ -957,10 +1002,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
         b46.setBounds(644,396,76,45);
         b47.setBounds(722,396,75,45);
         b48.setBounds(800,396,76,45);
-        b49.setBounds(880,481,55,143);
-       
-        
-        
+        b49.setBounds(880,481,55,143);     
     }
     public JMenuItem getMItem1(){
         return mItem1;
@@ -971,6 +1013,9 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     public JMenuItem getMItem3(){
         return mItem3;
     }
+    /**
+     * @return Button um das Rouletterad zu drehen
+     */
     public JButton getSpielenButton(){
         return bSpielen;
     }
@@ -980,15 +1025,15 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     public int wertGeben(){
         return comboBox.wertGeben();
     }
-    public Bild getAktuellerCoin(){
-        return aktuellerCoin;
-    }
     /**
      * @return true if the animation is finished
      */
     public boolean ready(){
         return ready;
     }
+    /**
+     * @return Buttton um die Einsätze zurückzusetzen
+     */
     public JButton getBReset(){
         return bReset;
     }
