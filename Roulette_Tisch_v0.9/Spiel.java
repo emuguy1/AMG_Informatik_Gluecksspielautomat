@@ -7,7 +7,6 @@ public class Spiel implements Model{
   public Spiel()  {  
     //Objektvariablen initialisieren  
   }
-  
   public void setView(View v){
     
   }
@@ -29,10 +28,16 @@ public class Spiel implements Model{
   public String getBenutzername(){
       return benutzer;
   }
+  /**
+   * Setzt alle Einsätze zurück
+   */
   public void reset(){
       einsatz = new ArrayList<String>();
       einsatzBetrag = new ArrayList<Integer>();
   }
+  /**
+   * @return An int[] with length 2, containing the winning number(index 0) and the winnings(index 1)
+   */
   public int[] spielen(){
     Integer gewinnzahl = (int) (Math.random()*37);
     int gewinn = 0;
@@ -80,6 +85,9 @@ public class Spiel implements Model{
         return false;
     }
   }
+  /**
+   * @return the winnings
+   */
   private int zahlVergleichen(Integer zahl,int gesetzterBertrag, String zahlGesetzt){
       if(zahlGesetzt.equals(zahl.toString())){
           int ergebnis =gesetzterBertrag * 37;

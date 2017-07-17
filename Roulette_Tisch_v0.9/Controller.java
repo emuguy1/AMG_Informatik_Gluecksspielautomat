@@ -2,7 +2,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
-
 public class Controller implements ActionListener{
     private View view;
     private Model model;
@@ -14,7 +13,7 @@ public class Controller implements ActionListener{
     }
     public void setModel(Model m){
        model = m;
-       }
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         

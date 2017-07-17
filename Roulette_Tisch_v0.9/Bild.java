@@ -1,8 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-public class Bild
- extends JPanel{
+public class Bild extends JPanel{
     
     private BufferedImage b1=null;
     private int value = 0;
