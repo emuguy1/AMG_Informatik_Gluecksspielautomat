@@ -103,7 +103,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     private JMenuItem mItem3 = new JMenuItem("Hilfe");
     private JMenuItem mItem4 = new JMenuItem("Profil");
     private JLabel lBetrag = new JLabel("Betrag: ");
-    private JMenu mBenutzername= new JMenu();
+    private JMenu mBenutzername= new JMenu("a");
     private JMenu menu = new JMenu("Menü");
     //VERLAUF
     private JLabel lUeberschrift = new JLabel("VERLAUF",SwingConstants.CENTER);
@@ -497,7 +497,7 @@ public class Spielbrett extends JFrame implements View, ActionListener{
     }
     public void benutzernameAnzeigen(){
         String d = model.getBenutzername();
-        mBenutzername.setText(d+"  ");
+        mBenutzername.setText(" "+d+"  ");
     }
     public void betragAnzeigen(){
         String d = model.getBetrag();
