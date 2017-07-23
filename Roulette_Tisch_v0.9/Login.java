@@ -38,7 +38,7 @@ public class Login extends JFrame implements View{
         setLayout(null);
         
         //Hintergrundblid setzen
-        setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/res/nice.jpg")));
+        setContentPane(new JLabel(new ImageIcon(System.getProperty("user.dir")+"/res/nice2.png")));
         
         //Adding the ActionListener
         b1.addActionListener(controller);

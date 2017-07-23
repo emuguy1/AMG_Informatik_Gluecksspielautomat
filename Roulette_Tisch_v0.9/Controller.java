@@ -60,6 +60,8 @@ public class Controller implements ActionListener{
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem4()){
             //PROFIL
+            view.dispose();
+            view = new Profil();
             
             
         }
