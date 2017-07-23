@@ -10,6 +10,7 @@ comment11.target=boolean\ ausreichendGeld()
 comment11.text=\r\n\ @return\ true\ falls\ der\ Kontostand\ ausreicht\r\n
 comment12.params=zahl\ gesetzterBertrag\ zahlGesetzt
 comment12.target=int\ zahlVergleichen(java.lang.Integer,\ int,\ java.lang.String)
+comment12.text=\r\n\ @return\ the\ winnings\r\n
 comment13.params=zahl
 comment13.target=boolean\ istGerade(int)
 comment14.params=zahl

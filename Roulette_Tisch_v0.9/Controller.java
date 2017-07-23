@@ -61,6 +61,7 @@ public class Controller implements ActionListener{
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getMItem4()){
             //PROFIL
             
+            
         }
         else if(view.getClass() == Spielbrett.class&&e.getSource() == ((Spielbrett)view).getBReset()){
             ((Spielbrett)view).reset();
